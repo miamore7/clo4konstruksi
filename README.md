@@ -15,11 +15,11 @@
 ---
 
 ## 📋 Anggota Kelompok & Tanggung Jawab
-| Nama          | NIM         | Fitur yang Dikembangkan                  |
-|---------------|-------------|------------------------------------------|
-| Anggota 1     | 1201220000  |                                          |
-| Anggota 2     | 1201220000  |                                          |
-| Anggota 3     | 1201220000  |                                          |
-| Anggota 4     | 1201220000  |                                          |
+| Nama                        | NIM         | Fitur yang Dikembangkan                  |
+|-----------------------------|-------------|------------------------------------------|
+| Muhammad Ageng Sasmito      | 1201220001  | Barang Keluar                            |
+| Anggota 2                   | 1201220000  |                                          |
+| Anggota 3                   | 1201220000  |                                          |
+| Anggota 4                   | 1201220000  |                                          |
 
 ---
