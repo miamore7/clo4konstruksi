@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace clo4konstruksi
@@ -104,6 +105,49 @@ namespace clo4konstruksi
             else
             {
                 MessageBox.Show(errorMessage, "Kapasitas Penuh");
+            }
+        }
+
+        private void keluarkanButton_Click(object sender, EventArgs e)
+        {
+            var lang = LoginService.Instance.LangManager;
+            try
+            {
+                if (string.IsNullOrWhiteSpace(idBarangKeluarTextBox.Text))
+                {
+                    throw new ArgumentException(lang.Get("Error_IDKosong"));
+                }
+                if (!int.TryParse(jumlahKeluarTextBox.Text, out int jumlah) || jumlah <= 0)
+                {
+                    throw new ArgumentException(lang.Get("Error_JumlahInvalid"));
+                }
+
+                string idToFind = idBarangKeluarTextBox.Text;
+                var barang = LoginService.Instance.GetItems().Find(b => b.Id.Equals(idToFind, StringComparison.OrdinalIgnoreCase));
+
+                if (barang == null)
+                {
+                    throw new KeyNotFoundException(lang.Format("Error_BarangTidakDitemukan", idToFind));
+                }
+
+                int stokLama = barang.Quantity;
+                LoginService.Instance.BarangKeluarMgr.KeluarkanBarang(barang, jumlah);
+
+                // Simpan perubahan dan update semua tampilan
+                LoginService.Instance.SaveItems();
+                LoadAllItems();
+                UpdateCapacityStatus();
+
+                logKeluarLabel.Text = $"Log: {lang.Format("SuccessMessage", jumlah, barang.Name, stokLama, barang.Quantity)}";
+            }
+            catch (Exception ex)
+            {
+                logKeluarLabel.Text = $"Log: {lang.Get("Error_General")} {ex.Message}";
+            }
+            finally
+            {
+                idBarangKeluarTextBox.Clear();
+                jumlahKeluarTextBox.Clear();
             }
         }
     }

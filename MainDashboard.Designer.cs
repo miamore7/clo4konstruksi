@@ -31,6 +31,7 @@
             this.logoutButton = new MetroFramework.Controls.MetroButton();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.barangTabPage = new MetroFramework.Controls.MetroTabPage();
+            this.statusGudangLabel = new MetroFramework.Controls.MetroLabel();
             this.loadDataButton = new MetroFramework.Controls.MetroButton();
             this.itemsDataGridView = new System.Windows.Forms.DataGridView();
             this.gudangTabPage = new MetroFramework.Controls.MetroTabPage();
@@ -39,12 +40,19 @@
             this.jumlahBarangTextBox = new MetroFramework.Controls.MetroTextBox();
             this.merkTextBox = new MetroFramework.Controls.MetroTextBox();
             this.namaBarangTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.statusGudangLabel = new MetroFramework.Controls.MetroLabel();
             this.manajemenAkunButton = new MetroFramework.Controls.MetroButton();
+            this.barangKeluarTabPage = new MetroFramework.Controls.MetroTabPage();
+            this.idBarangKeluarLabel = new MetroFramework.Controls.MetroLabel();
+            this.idBarangKeluarTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.jumlahKeluarLabel = new MetroFramework.Controls.MetroLabel();
+            this.jumlahKeluarTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.keluarkanButton = new MetroFramework.Controls.MetroButton();
+            this.logKeluarLabel = new MetroFramework.Controls.MetroLabel();
             this.metroTabControl1.SuspendLayout();
             this.barangTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemsDataGridView)).BeginInit();
             this.gudangTabPage.SuspendLayout();
+            this.barangKeluarTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // logoutButton
@@ -61,10 +69,11 @@
             // 
             this.metroTabControl1.Controls.Add(this.barangTabPage);
             this.metroTabControl1.Controls.Add(this.gudangTabPage);
+            this.metroTabControl1.Controls.Add(this.barangKeluarTabPage);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(20, 60);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 2;
             this.metroTabControl1.Size = new System.Drawing.Size(760, 370);
             this.metroTabControl1.TabIndex = 1;
             this.metroTabControl1.UseSelectable = true;
@@ -85,6 +94,15 @@
             this.barangTabPage.VerticalScrollbarBarColor = true;
             this.barangTabPage.VerticalScrollbarHighlightOnWheel = false;
             this.barangTabPage.VerticalScrollbarSize = 10;
+            // 
+            // statusGudangLabel
+            // 
+            this.statusGudangLabel.AutoSize = true;
+            this.statusGudangLabel.Location = new System.Drawing.Point(0, 153);
+            this.statusGudangLabel.Name = "statusGudangLabel";
+            this.statusGudangLabel.Size = new System.Drawing.Size(106, 19);
+            this.statusGudangLabel.TabIndex = 4;
+            this.statusGudangLabel.Text = "Status Gudang: -";
             // 
             // loadDataButton
             // 
@@ -157,9 +175,9 @@
             // 
             // 
             this.jumlahBarangTextBox.CustomButton.Image = null;
-            this.jumlahBarangTextBox.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.jumlahBarangTextBox.CustomButton.Location = new System.Drawing.Point(145, 1);
             this.jumlahBarangTextBox.CustomButton.Name = "";
-            this.jumlahBarangTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.jumlahBarangTextBox.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.jumlahBarangTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.jumlahBarangTextBox.CustomButton.TabIndex = 1;
             this.jumlahBarangTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -189,9 +207,9 @@
             // 
             // 
             this.merkTextBox.CustomButton.Image = null;
-            this.merkTextBox.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.merkTextBox.CustomButton.Location = new System.Drawing.Point(145, 1);
             this.merkTextBox.CustomButton.Name = "";
-            this.merkTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.merkTextBox.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.merkTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.merkTextBox.CustomButton.TabIndex = 1;
             this.merkTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -221,9 +239,9 @@
             // 
             // 
             this.namaBarangTextBox.CustomButton.Image = null;
-            this.namaBarangTextBox.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.namaBarangTextBox.CustomButton.Location = new System.Drawing.Point(145, 1);
             this.namaBarangTextBox.CustomButton.Name = "";
-            this.namaBarangTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.namaBarangTextBox.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.namaBarangTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.namaBarangTextBox.CustomButton.TabIndex = 1;
             this.namaBarangTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -247,15 +265,6 @@
             this.namaBarangTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.namaBarangTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // statusGudangLabel
-            // 
-            this.statusGudangLabel.AutoSize = true;
-            this.statusGudangLabel.Location = new System.Drawing.Point(0, 153);
-            this.statusGudangLabel.Name = "statusGudangLabel";
-            this.statusGudangLabel.Size = new System.Drawing.Size(106, 19);
-            this.statusGudangLabel.TabIndex = 4;
-            this.statusGudangLabel.Text = "Status Gudang: -";
-            // 
             // manajemenAkunButton
             // 
             this.manajemenAkunButton.Location = new System.Drawing.Point(588, 31);
@@ -265,6 +274,123 @@
             this.manajemenAkunButton.Text = "Manajemen Akun";
             this.manajemenAkunButton.UseSelectable = true;
             this.manajemenAkunButton.Click += new System.EventHandler(this.manajemenAkunButton_Click);
+            // 
+            // barangKeluarTabPage
+            // 
+            this.barangKeluarTabPage.Controls.Add(this.logKeluarLabel);
+            this.barangKeluarTabPage.Controls.Add(this.keluarkanButton);
+            this.barangKeluarTabPage.Controls.Add(this.jumlahKeluarTextBox);
+            this.barangKeluarTabPage.Controls.Add(this.jumlahKeluarLabel);
+            this.barangKeluarTabPage.Controls.Add(this.idBarangKeluarTextBox);
+            this.barangKeluarTabPage.Controls.Add(this.idBarangKeluarLabel);
+            this.barangKeluarTabPage.HorizontalScrollbarBarColor = true;
+            this.barangKeluarTabPage.HorizontalScrollbarHighlightOnWheel = false;
+            this.barangKeluarTabPage.HorizontalScrollbarSize = 10;
+            this.barangKeluarTabPage.Location = new System.Drawing.Point(4, 38);
+            this.barangKeluarTabPage.Name = "barangKeluarTabPage";
+            this.barangKeluarTabPage.Size = new System.Drawing.Size(752, 328);
+            this.barangKeluarTabPage.TabIndex = 3;
+            this.barangKeluarTabPage.Text = "Barang Keluar";
+            this.barangKeluarTabPage.VerticalScrollbarBarColor = true;
+            this.barangKeluarTabPage.VerticalScrollbarHighlightOnWheel = false;
+            this.barangKeluarTabPage.VerticalScrollbarSize = 10;
+            // 
+            // idBarangKeluarLabel
+            // 
+            this.idBarangKeluarLabel.AutoSize = true;
+            this.idBarangKeluarLabel.Location = new System.Drawing.Point(3, 12);
+            this.idBarangKeluarLabel.Name = "idBarangKeluarLabel";
+            this.idBarangKeluarLabel.Size = new System.Drawing.Size(70, 19);
+            this.idBarangKeluarLabel.TabIndex = 2;
+            this.idBarangKeluarLabel.Text = "ID Barang:";
+            // 
+            // idBarangKeluarTextBox
+            // 
+            // 
+            // 
+            // 
+            this.idBarangKeluarTextBox.CustomButton.Image = null;
+            this.idBarangKeluarTextBox.CustomButton.Location = new System.Drawing.Point(173, 1);
+            this.idBarangKeluarTextBox.CustomButton.Name = "";
+            this.idBarangKeluarTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.idBarangKeluarTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.idBarangKeluarTextBox.CustomButton.TabIndex = 1;
+            this.idBarangKeluarTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.idBarangKeluarTextBox.CustomButton.UseSelectable = true;
+            this.idBarangKeluarTextBox.CustomButton.Visible = false;
+            this.idBarangKeluarTextBox.Lines = new string[0];
+            this.idBarangKeluarTextBox.Location = new System.Drawing.Point(79, 12);
+            this.idBarangKeluarTextBox.MaxLength = 32767;
+            this.idBarangKeluarTextBox.Name = "idBarangKeluarTextBox";
+            this.idBarangKeluarTextBox.PasswordChar = '\0';
+            this.idBarangKeluarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.idBarangKeluarTextBox.SelectedText = "";
+            this.idBarangKeluarTextBox.SelectionLength = 0;
+            this.idBarangKeluarTextBox.SelectionStart = 0;
+            this.idBarangKeluarTextBox.ShortcutsEnabled = true;
+            this.idBarangKeluarTextBox.Size = new System.Drawing.Size(195, 23);
+            this.idBarangKeluarTextBox.TabIndex = 3;
+            this.idBarangKeluarTextBox.UseSelectable = true;
+            this.idBarangKeluarTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.idBarangKeluarTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // jumlahKeluarLabel
+            // 
+            this.jumlahKeluarLabel.AutoSize = true;
+            this.jumlahKeluarLabel.Location = new System.Drawing.Point(3, 46);
+            this.jumlahKeluarLabel.Name = "jumlahKeluarLabel";
+            this.jumlahKeluarLabel.Size = new System.Drawing.Size(53, 19);
+            this.jumlahKeluarLabel.TabIndex = 4;
+            this.jumlahKeluarLabel.Text = "Jumlah:";
+            // 
+            // jumlahKeluarTextBox
+            // 
+            // 
+            // 
+            // 
+            this.jumlahKeluarTextBox.CustomButton.Image = null;
+            this.jumlahKeluarTextBox.CustomButton.Location = new System.Drawing.Point(173, 1);
+            this.jumlahKeluarTextBox.CustomButton.Name = "";
+            this.jumlahKeluarTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.jumlahKeluarTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.jumlahKeluarTextBox.CustomButton.TabIndex = 1;
+            this.jumlahKeluarTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.jumlahKeluarTextBox.CustomButton.UseSelectable = true;
+            this.jumlahKeluarTextBox.CustomButton.Visible = false;
+            this.jumlahKeluarTextBox.Lines = new string[0];
+            this.jumlahKeluarTextBox.Location = new System.Drawing.Point(79, 46);
+            this.jumlahKeluarTextBox.MaxLength = 32767;
+            this.jumlahKeluarTextBox.Name = "jumlahKeluarTextBox";
+            this.jumlahKeluarTextBox.PasswordChar = '\0';
+            this.jumlahKeluarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.jumlahKeluarTextBox.SelectedText = "";
+            this.jumlahKeluarTextBox.SelectionLength = 0;
+            this.jumlahKeluarTextBox.SelectionStart = 0;
+            this.jumlahKeluarTextBox.ShortcutsEnabled = true;
+            this.jumlahKeluarTextBox.Size = new System.Drawing.Size(195, 23);
+            this.jumlahKeluarTextBox.TabIndex = 5;
+            this.jumlahKeluarTextBox.UseSelectable = true;
+            this.jumlahKeluarTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.jumlahKeluarTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // keluarkanButton
+            // 
+            this.keluarkanButton.Location = new System.Drawing.Point(3, 75);
+            this.keluarkanButton.Name = "keluarkanButton";
+            this.keluarkanButton.Size = new System.Drawing.Size(271, 23);
+            this.keluarkanButton.TabIndex = 6;
+            this.keluarkanButton.Text = "Proses";
+            this.keluarkanButton.UseSelectable = true;
+            this.keluarkanButton.Click += new System.EventHandler(this.keluarkanButton_Click);
+            // 
+            // logKeluarLabel
+            // 
+            this.logKeluarLabel.AutoSize = true;
+            this.logKeluarLabel.Location = new System.Drawing.Point(3, 113);
+            this.logKeluarLabel.Name = "logKeluarLabel";
+            this.logKeluarLabel.Size = new System.Drawing.Size(44, 19);
+            this.logKeluarLabel.TabIndex = 7;
+            this.logKeluarLabel.Text = "Log: -";
             // 
             // MainDashboard
             // 
@@ -282,6 +408,8 @@
             this.barangTabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemsDataGridView)).EndInit();
             this.gudangTabPage.ResumeLayout(false);
+            this.barangKeluarTabPage.ResumeLayout(false);
+            this.barangKeluarTabPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -301,5 +429,12 @@
         private MetroFramework.Controls.MetroTextBox namaBarangTextBox;
         private MetroFramework.Controls.MetroLabel statusGudangLabel;
         private MetroFramework.Controls.MetroButton manajemenAkunButton;
+        private MetroFramework.Controls.MetroTabPage barangKeluarTabPage;
+        private MetroFramework.Controls.MetroLabel logKeluarLabel;
+        private MetroFramework.Controls.MetroButton keluarkanButton;
+        private MetroFramework.Controls.MetroTextBox jumlahKeluarTextBox;
+        private MetroFramework.Controls.MetroLabel jumlahKeluarLabel;
+        private MetroFramework.Controls.MetroTextBox idBarangKeluarTextBox;
+        private MetroFramework.Controls.MetroLabel idBarangKeluarLabel;
     }
 }
