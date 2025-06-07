@@ -8,22 +8,29 @@ namespace clo4konstruksi
 {
     public class LoginService
     {
-        // 1. Tambahkan static property untuk menampung satu-satunya instance
         private static LoginService _instance;
-
-        // Properti lain tetap sama
         private List<User> users;
-        private readonly string filePath = "users.json";
+        private List<Item> items;
+        private readonly string _userFilePath = "Data/users.json";
+        private readonly string _itemFilePath = "Data/DataBarang.json";
+        private readonly Dictionary<string, int> _capacities = new Dictionary<string, int> { { "HP", 500 }, { "Laptop", 1000 } };
+
         public User LoggedInUser { get; private set; }
         public LoginState CurrentLoginState { get; private set; } = LoginState.LoggedOut;
+        public InventoryManager InvManager { get; private set; }
+        public LanguageManager LangManager { get; private set; }
+        public BarangKeluarManager BarangKeluarMgr { get; private set; }
 
-        // 2. Buat constructor menjadi PRIVATE
         private LoginService()
         {
             LoadUsers();
+            LoadItems();
+            InvManager = new InventoryManager(this.items, this._capacities);
+            LangManager = new LanguageManager();
+            LangManager.LoadLanguage("ID");
+            BarangKeluarMgr = new BarangKeluarManager();
         }
 
-        // 3. Buat properti publik untuk mengakses satu-satunya instance
         public static LoginService Instance
         {
             get
@@ -36,74 +43,58 @@ namespace clo4konstruksi
             }
         }
 
-        private List<Item> items = new List<Item>
-        {
-            new Item { Id = "B001", Name = "Samsung Galaxy S21", Category = "HP", Quantity = 10 },
-            new Item { Id = "B002", Name = "iPhone 13", Category = "HP", Quantity = 7 },
-            new Item { Id = "B003", Name = "Dell XPS 13", Category = "Laptop", Quantity = 5 },
-            new Item { Id = "B004", Name = "MacBook Pro", Category = "Laptop", Quantity = 3 }
-        };
-        public List<Item> GetItems(string category = null, bool sortByName = false)
-        {
-            IEnumerable<Item> query = items;
-
-            if (!string.IsNullOrEmpty(category))
-            {
-                query = query.Where(i => i.Category.Equals(category, StringComparison.OrdinalIgnoreCase));
-            }
-
-            if (sortByName)
-            {
-                query = query.OrderBy(i => i.Name);
-            }
-
-            return query.ToList();
-        }
-
-        // --- SEMUA METODE LAIN (LoadUsers, SaveUsers, Login, dll) TETAP SAMA ---
-        // --- Cukup salin semua metode Anda yang lain di bawah sini ---
-
         private void LoadUsers()
         {
-            if (File.Exists(filePath))
+            if (File.Exists(_userFilePath))
             {
-                string json = File.ReadAllText(filePath);
+                string json = File.ReadAllText(_userFilePath);
                 users = JsonSerializer.Deserialize<List<User>>(json) ?? new List<User>();
             }
-            else
-            {
-                users = new List<User>();
-            }
+            else { users = new List<User>(); }
         }
 
         private void SaveUsers()
         {
             string json = JsonSerializer.Serialize(users, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(filePath, json);
+            File.WriteAllText(_userFilePath, json);
+        }
+
+        private void LoadItems()
+        {
+            if (File.Exists(_itemFilePath))
+            {
+                string json = File.ReadAllText(_itemFilePath);
+                items = JsonSerializer.Deserialize<List<Item>>(json) ?? new List<Item>();
+            }
+            else { items = new List<Item>(); }
+        }
+
+        public void SaveItems()
+        {
+            string json = JsonSerializer.Serialize(items, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(_itemFilePath, json);
         }
 
         public bool Login(string username, string password)
         {
-            if (string.IsNullOrWhiteSpace(username)) throw new ArgumentException("Username tidak boleh kosong.");
-            if (string.IsNullOrWhiteSpace(password)) throw new ArgumentException("Password tidak boleh kosong.");
-
-            // Langsung bandingkan password dari input dengan yang ada di data
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password)) return false;
             LoggedInUser = users.FirstOrDefault(u => u.Username == username && u.Password == password && u.IsActive);
-
             if (LoggedInUser != null)
             {
                 CurrentLoginState = LoginState.LoggedIn;
                 return true;
             }
-
             return false;
         }
 
-        public List<User> GetAllUsers()
+        public void Logout()
         {
-            return users.Where(u => u.Role != "SuperAdmin").ToList();
+            LoggedInUser = null;
+            CurrentLoginState = LoginState.LoggedOut;
         }
 
+        public List<Item> GetItems() => items;
+        public List<User> GetAllUsers() => users.Where(u => u.Role != "SuperAdmin").ToList();
         public void SetUserStatus(string username, bool isActive)
         {
             var userToUpdate = users.FirstOrDefault(u => u.Username == username);
@@ -114,10 +105,32 @@ namespace clo4konstruksi
             }
         }
 
-        public void Logout()
+        public void CreateAdmin(string username, string password)
         {
-            LoggedInUser = null;
-            CurrentLoginState = LoginState.LoggedOut;
+            if (users.Any(u => u.Username.Equals(username, StringComparison.OrdinalIgnoreCase)))
+            {
+                throw new InvalidOperationException("Username sudah digunakan.");
+            }
+
+            var newUser = new User
+            {
+                Username = username,
+                Password = password, // Ingat, kita masih pakai plain text
+                Role = "admin",
+                IsActive = true
+            };
+            users.Add(newUser);
+            SaveUsers();
+        }
+
+        public void DeleteUser(string username)
+        {
+            var userToRemove = users.FirstOrDefault(u => u.Username.Equals(username, StringComparison.OrdinalIgnoreCase));
+            if (userToRemove != null)
+            {
+                users.Remove(userToRemove);
+                SaveUsers();
+            }
         }
     }
 }

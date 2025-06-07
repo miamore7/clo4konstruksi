@@ -1,23 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace clo4konstruksi
 {
     public partial class LoginForm : MetroFramework.Forms.MetroForm
     {
-        private LoginService _loginService;
+        private LoginService _loginService = LoginService.Instance;
 
         public LoginForm()
         {
             InitializeComponent();
-            _loginService = LoginService.Instance;
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -30,13 +22,9 @@ namespace clo4konstruksi
                 if (_loginService.Login(username, password))
                 {
                     MessageBox.Show("Login berhasil!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    // Sembunyikan form login saat ini
                     this.Hide();
-
-                    // Buat dan tampilkan form dashboard admin
-                    AdminDashboardForm adminForm = new AdminDashboardForm();
-                    adminForm.Show();
+                    MainDashboard mainDashboard = new MainDashboard(this);
+                    mainDashboard.Show();
                 }
                 else
                 {
