@@ -3,72 +3,20 @@
   "WorkspaceRootPath": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\maindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:maindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|e:\\kuliah\\semester6\\konstruksi-perangkat-lunak\\clo4konstruksi\\maindashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:maindashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|e:\\kuliah\\semester6\\konstruksi-perangkat-lunak\\clo4konstruksi\\admindashboardform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:admindashboardform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|e:\\kuliah\\semester6\\konstruksi-perangkat-lunak\\clo4konstruksi\\manajemenakunform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:manajemenakunform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|e:\\kuliah\\semester6\\konstruksi-perangkat-lunak\\clo4konstruksi\\maindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:maindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\manajemenakunform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:manajemenakunform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|e:\\kuliah\\semester6\\konstruksi-perangkat-lunak\\clo4konstruksi\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|e:\\kuliah\\semester6\\konstruksi-perangkat-lunak\\clo4konstruksi\\data\\databarang.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:data\\databarang.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|e:\\kuliah\\semester6\\konstruksi-perangkat-lunak\\clo4konstruksi\\filtersortconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:filtersortconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|e:\\kuliah\\semester6\\konstruksi-perangkat-lunak\\clo4konstruksi\\data\\tampilanconfig.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:data\\tampilanconfig.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\manajemenakunform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|e:\\kuliah\\semester6\\konstruksi-perangkat-lunak\\clo4konstruksi\\manajemenakunform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:manajemenakunform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|e:\\kuliah\\semester6\\konstruksi-perangkat-lunak\\clo4konstruksi\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\admindashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:admindashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\admindashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:admindashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\languagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:languagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\barangkeluarmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:barangkeluarmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|e:\\kuliah\\semester6\\konstruksi-perangkat-lunak\\clo4konstruksi\\maindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:maindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 23,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -87,215 +35,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ManajemenAkunForm.Designer.cs",
-              "DocumentMoniker": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\ManajemenAkunForm.Designer.cs",
-              "RelativeDocumentMoniker": "ManajemenAkunForm.Designer.cs",
-              "ToolTip": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\ManajemenAkunForm.Designer.cs*",
-              "RelativeToolTip": "ManajemenAkunForm.Designer.cs*",
-              "ViewState": "AgIAAJ0AAAAAAAAAAAAYwKgAAAA4AAAAAAAAAA==",
+              "Title": "MainDashboard.cs",
+              "DocumentMoniker": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\MainDashboard.cs",
+              "RelativeDocumentMoniker": "MainDashboard.cs",
+              "ToolTip": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\MainDashboard.cs",
+              "RelativeToolTip": "MainDashboard.cs",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAMwKEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T12:32:55.268Z",
+              "WhenOpened": "2025-06-07T13:21:33.035Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MainDashboard.Designer.cs",
-              "DocumentMoniker": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\MainDashboard.Designer.cs",
-              "RelativeDocumentMoniker": "MainDashboard.Designer.cs",
-              "ToolTip": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\MainDashboard.Designer.cs*",
-              "RelativeToolTip": "MainDashboard.Designer.cs*",
-              "ViewState": "AgIAAB8BAAAAAAAAAAAYwCoBAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T12:32:47.933Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AdminDashboardForm.Designer.cs",
-              "DocumentMoniker": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\AdminDashboardForm.Designer.cs",
-              "RelativeDocumentMoniker": "AdminDashboardForm.Designer.cs",
-              "ToolTip": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\AdminDashboardForm.Designer.cs*",
-              "RelativeToolTip": "AdminDashboardForm.Designer.cs*",
-              "ViewState": "AgIAACsBAAAAAAAAAAAYwDYBAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T12:32:35.95Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FilterSortConfig.cs",
-              "DocumentMoniker": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\FilterSortConfig.cs",
-              "RelativeDocumentMoniker": "FilterSortConfig.cs",
-              "ToolTip": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\FilterSortConfig.cs",
-              "RelativeToolTip": "FilterSortConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T12:20:57.061Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "TampilanConfig.json",
-              "DocumentMoniker": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\Data\\TampilanConfig.json",
-              "RelativeDocumentMoniker": "Data\\TampilanConfig.json",
-              "ToolTip": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\Data\\TampilanConfig.json",
-              "RelativeToolTip": "Data\\TampilanConfig.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-07T12:11:49.548Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DataBarang.json",
-              "DocumentMoniker": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\Data\\DataBarang.json",
-              "RelativeDocumentMoniker": "Data\\DataBarang.json",
-              "ToolTip": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\Data\\DataBarang.json",
-              "RelativeToolTip": "Data\\DataBarang.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-07T12:07:26.651Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Item.cs",
-              "DocumentMoniker": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\Item.cs",
-              "RelativeDocumentMoniker": "Item.cs",
-              "ToolTip": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\Item.cs",
-              "RelativeToolTip": "Item.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T12:07:15.363Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ManajemenAkunForm.cs",
-              "DocumentMoniker": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\ManajemenAkunForm.cs",
-              "RelativeDocumentMoniker": "ManajemenAkunForm.cs",
-              "ToolTip": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\ManajemenAkunForm.cs",
-              "RelativeToolTip": "ManajemenAkunForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T11:02:16.855Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
               "Title": "ManajemenAkunForm.cs [Design]",
               "DocumentMoniker": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\ManajemenAkunForm.cs",
               "RelativeDocumentMoniker": "ManajemenAkunForm.cs",
               "ToolTip": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\ManajemenAkunForm.cs [Design]",
               "RelativeToolTip": "ManajemenAkunForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T11:01:39.509Z",
+              "WhenOpened": "2025-06-07T13:15:42.596Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "LoginForm.cs",
+              "DocumentIndex": 2,
+              "Title": "LoginForm.cs [Design]",
               "DocumentMoniker": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\LoginForm.cs",
               "RelativeDocumentMoniker": "LoginForm.cs",
-              "ToolTip": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\LoginForm.cs",
-              "RelativeToolTip": "LoginForm.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAowBoAAAApAAAAAAAAAA==",
+              "ToolTip": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\LoginForm.cs [Design]",
+              "RelativeToolTip": "LoginForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T10:49:51.612Z"
+              "WhenOpened": "2025-06-07T13:15:04.21Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MainDashboard.cs",
-              "DocumentMoniker": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\MainDashboard.cs",
-              "RelativeDocumentMoniker": "MainDashboard.cs",
-              "ToolTip": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\MainDashboard.cs*",
-              "RelativeToolTip": "MainDashboard.cs*",
-              "ViewState": "AgIAAA4AAAAAAAAAAADwvx8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T10:35:35.21Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LoginService.cs",
-              "DocumentMoniker": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\LoginService.cs",
-              "RelativeDocumentMoniker": "LoginService.cs",
-              "ToolTip": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\LoginService.cs*",
-              "RelativeToolTip": "LoginService.cs*",
-              "ViewState": "AgIAABYAAAAAAAAAAAA0wCAAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T09:43:33.577Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "MainDashboard.cs [Design]",
               "DocumentMoniker": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\MainDashboard.cs",
               "RelativeDocumentMoniker": "MainDashboard.cs",
-              "ToolTip": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\MainDashboard.cs [Design]*",
-              "RelativeToolTip": "MainDashboard.cs [Design]*",
+              "ToolTip": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\MainDashboard.cs [Design]",
+              "RelativeToolTip": "MainDashboard.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T10:35:23.245Z",
+              "WhenOpened": "2025-06-07T13:14:57.574Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AdminDashboardForm.cs",
-              "DocumentMoniker": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\AdminDashboardForm.cs",
-              "RelativeDocumentMoniker": "AdminDashboardForm.cs",
-              "ToolTip": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\AdminDashboardForm.cs",
-              "RelativeToolTip": "AdminDashboardForm.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T09:48:57.317Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "AdminDashboardForm.cs [Design]",
-              "DocumentMoniker": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\AdminDashboardForm.cs",
-              "RelativeDocumentMoniker": "AdminDashboardForm.cs",
-              "ToolTip": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\AdminDashboardForm.cs [Design]",
-              "RelativeToolTip": "AdminDashboardForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T09:47:27.289Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "LanguageManager.cs",
-              "DocumentMoniker": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\LanguageManager.cs",
-              "RelativeDocumentMoniker": "LanguageManager.cs",
-              "ToolTip": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\LanguageManager.cs",
-              "RelativeToolTip": "LanguageManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T09:46:20.671Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "BarangKeluarManager.cs",
-              "DocumentMoniker": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\BarangKeluarManager.cs",
-              "RelativeDocumentMoniker": "BarangKeluarManager.cs",
-              "ToolTip": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\BarangKeluarManager.cs",
-              "RelativeToolTip": "BarangKeluarManager.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAABWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T09:21:42.351Z"
             }
           ]
         },

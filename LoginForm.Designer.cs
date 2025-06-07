@@ -33,6 +33,7 @@
             this.loginButton = new MetroFramework.Controls.MetroButton();
             this.UsernameLabel = new MetroFramework.Controls.MetroLabel();
             this.PasswordLabel = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // usernameTextBox
@@ -50,16 +51,17 @@
             this.usernameTextBox.CustomButton.UseSelectable = true;
             this.usernameTextBox.CustomButton.Visible = false;
             this.usernameTextBox.Lines = new string[0];
-            this.usernameTextBox.Location = new System.Drawing.Point(330, 164);
+            this.usernameTextBox.Location = new System.Drawing.Point(371, 170);
             this.usernameTextBox.MaxLength = 32767;
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.PasswordChar = '\0';
+            this.usernameTextBox.PromptText = "Masukkan Password";
             this.usernameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.usernameTextBox.SelectedText = "";
             this.usernameTextBox.SelectionLength = 0;
             this.usernameTextBox.SelectionStart = 0;
             this.usernameTextBox.ShortcutsEnabled = true;
-            this.usernameTextBox.Size = new System.Drawing.Size(135, 23);
+            this.usernameTextBox.Size = new System.Drawing.Size(135, 25);
             this.usernameTextBox.TabIndex = 5;
             this.usernameTextBox.Theme = MetroFramework.MetroThemeStyle.Light;
             this.usernameTextBox.UseSelectable = true;
@@ -82,10 +84,11 @@
             this.passwordTextBox.CustomButton.UseSelectable = true;
             this.passwordTextBox.CustomButton.Visible = false;
             this.passwordTextBox.Lines = new string[0];
-            this.passwordTextBox.Location = new System.Drawing.Point(330, 217);
+            this.passwordTextBox.Location = new System.Drawing.Point(371, 210);
             this.passwordTextBox.MaxLength = 32767;
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '●';
+            this.passwordTextBox.PromptText = "Masukkan Password";
             this.passwordTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.passwordTextBox.SelectedText = "";
             this.passwordTextBox.SelectionLength = 0;
@@ -100,7 +103,7 @@
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(356, 246);
+            this.loginButton.Location = new System.Drawing.Point(338, 253);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(75, 23);
             this.loginButton.TabIndex = 7;
@@ -111,26 +114,39 @@
             // UsernameLabel
             // 
             this.UsernameLabel.AutoSize = true;
-            this.UsernameLabel.Location = new System.Drawing.Point(356, 142);
+            this.UsernameLabel.Location = new System.Drawing.Point(277, 170);
             this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(68, 19);
+            this.UsernameLabel.Size = new System.Drawing.Size(71, 19);
             this.UsernameLabel.TabIndex = 8;
-            this.UsernameLabel.Text = "Username";
+            this.UsernameLabel.Text = "Username:";
+            this.UsernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(356, 195);
+            this.PasswordLabel.Location = new System.Drawing.Point(282, 210);
             this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(63, 19);
+            this.PasswordLabel.Size = new System.Drawing.Size(66, 19);
             this.PasswordLabel.TabIndex = 9;
-            this.PasswordLabel.Text = "Password";
+            this.PasswordLabel.Text = "Password:";
+            this.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel1.Location = new System.Drawing.Point(354, 127);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(59, 25);
+            this.metroLabel1.TabIndex = 10;
+            this.metroLabel1.Text = "Log In";
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.UsernameLabel);
             this.Controls.Add(this.loginButton);
@@ -150,5 +166,6 @@
         private MetroFramework.Controls.MetroButton loginButton;
         private MetroFramework.Controls.MetroLabel UsernameLabel;
         private MetroFramework.Controls.MetroLabel PasswordLabel;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
     }
 }

@@ -35,10 +35,10 @@
             this.setInactiveButton = new MetroFramework.Controls.MetroButton();
             this.deleteAdminButton = new MetroFramework.Controls.MetroButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.newUsernameTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.newPasswordTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.createAdminButton = new MetroFramework.Controls.MetroButton();
             this.kembaliButton = new MetroFramework.Controls.MetroButton();
+            this.createAdminButton = new MetroFramework.Controls.MetroButton();
+            this.newPasswordTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.newUsernameTextBox = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -117,36 +117,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buat Akun Admin Baru";
             // 
-            // newUsernameTextBox
+            // kembaliButton
             // 
+            this.kembaliButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.kembaliButton.Location = new System.Drawing.Point(7, 109);
+            this.kembaliButton.Name = "kembaliButton";
+            this.kembaliButton.Size = new System.Drawing.Size(180, 23);
+            this.kembaliButton.TabIndex = 3;
+            this.kembaliButton.Text = "Kembali ke Dashboard\n";
+            this.kembaliButton.UseSelectable = true;
+            this.kembaliButton.Click += new System.EventHandler(this.kembaliButton_Click);
             // 
+            // createAdminButton
             // 
-            // 
-            this.newUsernameTextBox.CustomButton.Image = null;
-            this.newUsernameTextBox.CustomButton.Location = new System.Drawing.Point(53, 1);
-            this.newUsernameTextBox.CustomButton.Name = "";
-            this.newUsernameTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.newUsernameTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.newUsernameTextBox.CustomButton.TabIndex = 1;
-            this.newUsernameTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.newUsernameTextBox.CustomButton.UseSelectable = true;
-            this.newUsernameTextBox.CustomButton.Visible = false;
-            this.newUsernameTextBox.Lines = new string[0];
-            this.newUsernameTextBox.Location = new System.Drawing.Point(6, 19);
-            this.newUsernameTextBox.MaxLength = 32767;
-            this.newUsernameTextBox.Name = "newUsernameTextBox";
-            this.newUsernameTextBox.PasswordChar = '\0';
-            this.newUsernameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.newUsernameTextBox.SelectedText = "";
-            this.newUsernameTextBox.SelectionLength = 0;
-            this.newUsernameTextBox.SelectionStart = 0;
-            this.newUsernameTextBox.ShortcutsEnabled = true;
-            this.newUsernameTextBox.Size = new System.Drawing.Size(181, 23);
-            this.newUsernameTextBox.TabIndex = 0;
-            this.newUsernameTextBox.UseSelectable = true;
-            this.newUsernameTextBox.WaterMark = "Username Baru";
-            this.newUsernameTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.newUsernameTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.createAdminButton.Location = new System.Drawing.Point(7, 80);
+            this.createAdminButton.Name = "createAdminButton";
+            this.createAdminButton.Size = new System.Drawing.Size(180, 23);
+            this.createAdminButton.TabIndex = 2;
+            this.createAdminButton.Text = "Buat Akun";
+            this.createAdminButton.UseSelectable = true;
+            this.createAdminButton.Click += new System.EventHandler(this.createAdminButton_Click);
             // 
             // newPasswordTextBox
             // 
@@ -154,7 +144,7 @@
             // 
             // 
             this.newPasswordTextBox.CustomButton.Image = null;
-            this.newPasswordTextBox.CustomButton.Location = new System.Drawing.Point(53, 1);
+            this.newPasswordTextBox.CustomButton.Location = new System.Drawing.Point(158, 1);
             this.newPasswordTextBox.CustomButton.Name = "";
             this.newPasswordTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.newPasswordTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -166,7 +156,8 @@
             this.newPasswordTextBox.Location = new System.Drawing.Point(7, 49);
             this.newPasswordTextBox.MaxLength = 32767;
             this.newPasswordTextBox.Name = "newPasswordTextBox";
-            this.newPasswordTextBox.PasswordChar = '\0';
+            this.newPasswordTextBox.PasswordChar = '●';
+            this.newPasswordTextBox.PromptText = "Password Baru";
             this.newPasswordTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.newPasswordTextBox.SelectedText = "";
             this.newPasswordTextBox.SelectionLength = 0;
@@ -179,25 +170,37 @@
             this.newPasswordTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.newPasswordTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // createAdminButton
+            // newUsernameTextBox
             // 
-            this.createAdminButton.Location = new System.Drawing.Point(7, 80);
-            this.createAdminButton.Name = "createAdminButton";
-            this.createAdminButton.Size = new System.Drawing.Size(180, 23);
-            this.createAdminButton.TabIndex = 2;
-            this.createAdminButton.Text = "Buat Akun";
-            this.createAdminButton.UseSelectable = true;
-            this.createAdminButton.Click += new System.EventHandler(this.createAdminButton_Click);
             // 
-            // kembaliButton
             // 
-            this.kembaliButton.Location = new System.Drawing.Point(7, 109);
-            this.kembaliButton.Name = "kembaliButton";
-            this.kembaliButton.Size = new System.Drawing.Size(180, 23);
-            this.kembaliButton.TabIndex = 3;
-            this.kembaliButton.Text = "Kembali ke Dashboard\n";
-            this.kembaliButton.UseSelectable = true;
-            this.kembaliButton.Click += new System.EventHandler(this.kembaliButton_Click);
+            // 
+            this.newUsernameTextBox.CustomButton.Image = null;
+            this.newUsernameTextBox.CustomButton.Location = new System.Drawing.Point(159, 1);
+            this.newUsernameTextBox.CustomButton.Name = "";
+            this.newUsernameTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.newUsernameTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.newUsernameTextBox.CustomButton.TabIndex = 1;
+            this.newUsernameTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.newUsernameTextBox.CustomButton.UseSelectable = true;
+            this.newUsernameTextBox.CustomButton.Visible = false;
+            this.newUsernameTextBox.Lines = new string[0];
+            this.newUsernameTextBox.Location = new System.Drawing.Point(6, 19);
+            this.newUsernameTextBox.MaxLength = 32767;
+            this.newUsernameTextBox.Name = "newUsernameTextBox";
+            this.newUsernameTextBox.PasswordChar = '\0';
+            this.newUsernameTextBox.PromptText = "Username Baru";
+            this.newUsernameTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.newUsernameTextBox.SelectedText = "";
+            this.newUsernameTextBox.SelectionLength = 0;
+            this.newUsernameTextBox.SelectionStart = 0;
+            this.newUsernameTextBox.ShortcutsEnabled = true;
+            this.newUsernameTextBox.Size = new System.Drawing.Size(181, 23);
+            this.newUsernameTextBox.TabIndex = 0;
+            this.newUsernameTextBox.UseSelectable = true;
+            this.newUsernameTextBox.WaterMark = "Username Baru";
+            this.newUsernameTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.newUsernameTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // ManajemenAkunForm
             // 
