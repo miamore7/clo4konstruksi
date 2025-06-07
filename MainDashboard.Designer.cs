@@ -31,8 +31,11 @@
             this.logoutButton = new MetroFramework.Controls.MetroButton();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.barangTabPage = new MetroFramework.Controls.MetroTabPage();
+            this.sortByComboBox = new MetroFramework.Controls.MetroComboBox();
+            this.sortLabel = new MetroFramework.Controls.MetroLabel();
+            this.filterKategoriComboBox = new MetroFramework.Controls.MetroComboBox();
+            this.filterLabel = new MetroFramework.Controls.MetroLabel();
             this.statusGudangLabel = new MetroFramework.Controls.MetroLabel();
-            this.loadDataButton = new MetroFramework.Controls.MetroButton();
             this.itemsDataGridView = new System.Windows.Forms.DataGridView();
             this.gudangTabPage = new MetroFramework.Controls.MetroTabPage();
             this.tambahBarangButton = new MetroFramework.Controls.MetroButton();
@@ -40,14 +43,16 @@
             this.jumlahBarangTextBox = new MetroFramework.Controls.MetroTextBox();
             this.merkTextBox = new MetroFramework.Controls.MetroTextBox();
             this.namaBarangTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.manajemenAkunButton = new MetroFramework.Controls.MetroButton();
             this.barangKeluarTabPage = new MetroFramework.Controls.MetroTabPage();
-            this.idBarangKeluarLabel = new MetroFramework.Controls.MetroLabel();
-            this.idBarangKeluarTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.jumlahKeluarLabel = new MetroFramework.Controls.MetroLabel();
-            this.jumlahKeluarTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.keluarkanButton = new MetroFramework.Controls.MetroButton();
             this.logKeluarLabel = new MetroFramework.Controls.MetroLabel();
+            this.keluarkanButton = new MetroFramework.Controls.MetroButton();
+            this.jumlahKeluarTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.jumlahKeluarLabel = new MetroFramework.Controls.MetroLabel();
+            this.idBarangKeluarTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.idBarangKeluarLabel = new MetroFramework.Controls.MetroLabel();
+            this.manajemenAkunButton = new MetroFramework.Controls.MetroButton();
+            this.sortOrderToggle = new MetroFramework.Controls.MetroToggle();
+            this.terapkanFilterButton = new MetroFramework.Controls.MetroButton();
             this.metroTabControl1.SuspendLayout();
             this.barangTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemsDataGridView)).BeginInit();
@@ -73,15 +78,20 @@
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(20, 60);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 2;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(760, 370);
             this.metroTabControl1.TabIndex = 1;
             this.metroTabControl1.UseSelectable = true;
             // 
             // barangTabPage
             // 
+            this.barangTabPage.Controls.Add(this.terapkanFilterButton);
+            this.barangTabPage.Controls.Add(this.sortOrderToggle);
+            this.barangTabPage.Controls.Add(this.sortByComboBox);
+            this.barangTabPage.Controls.Add(this.sortLabel);
+            this.barangTabPage.Controls.Add(this.filterKategoriComboBox);
+            this.barangTabPage.Controls.Add(this.filterLabel);
             this.barangTabPage.Controls.Add(this.statusGudangLabel);
-            this.barangTabPage.Controls.Add(this.loadDataButton);
             this.barangTabPage.Controls.Add(this.itemsDataGridView);
             this.barangTabPage.HorizontalScrollbarBarColor = true;
             this.barangTabPage.HorizontalScrollbarHighlightOnWheel = false;
@@ -95,6 +105,53 @@
             this.barangTabPage.VerticalScrollbarHighlightOnWheel = false;
             this.barangTabPage.VerticalScrollbarSize = 10;
             // 
+            // sortByComboBox
+            // 
+            this.sortByComboBox.FormattingEnabled = true;
+            this.sortByComboBox.ItemHeight = 23;
+            this.sortByComboBox.Items.AddRange(new object[] {
+            "Nama",
+            "Merk",
+            "Quantity",
+            "TanggalMasuk"});
+            this.sortByComboBox.Location = new System.Drawing.Point(103, 231);
+            this.sortByComboBox.Name = "sortByComboBox";
+            this.sortByComboBox.Size = new System.Drawing.Size(121, 29);
+            this.sortByComboBox.TabIndex = 8;
+            this.sortByComboBox.UseSelectable = true;
+            // 
+            // sortLabel
+            // 
+            this.sortLabel.AutoSize = true;
+            this.sortLabel.Location = new System.Drawing.Point(3, 231);
+            this.sortLabel.Name = "sortLabel";
+            this.sortLabel.Size = new System.Drawing.Size(57, 19);
+            this.sortLabel.TabIndex = 7;
+            this.sortLabel.Text = "Urutkan:";
+            // 
+            // filterKategoriComboBox
+            // 
+            this.filterKategoriComboBox.FormattingEnabled = true;
+            this.filterKategoriComboBox.ItemHeight = 23;
+            this.filterKategoriComboBox.Items.AddRange(new object[] {
+            "(Semua)",
+            "HP",
+            "Laptop"});
+            this.filterKategoriComboBox.Location = new System.Drawing.Point(103, 187);
+            this.filterKategoriComboBox.Name = "filterKategoriComboBox";
+            this.filterKategoriComboBox.Size = new System.Drawing.Size(121, 29);
+            this.filterKategoriComboBox.TabIndex = 6;
+            this.filterKategoriComboBox.UseSelectable = true;
+            // 
+            // filterLabel
+            // 
+            this.filterLabel.AutoSize = true;
+            this.filterLabel.Location = new System.Drawing.Point(3, 187);
+            this.filterLabel.Name = "filterLabel";
+            this.filterLabel.Size = new System.Drawing.Size(94, 19);
+            this.filterLabel.TabIndex = 5;
+            this.filterLabel.Text = "Filter Kategori:";
+            // 
             // statusGudangLabel
             // 
             this.statusGudangLabel.AutoSize = true;
@@ -103,16 +160,6 @@
             this.statusGudangLabel.Size = new System.Drawing.Size(106, 19);
             this.statusGudangLabel.TabIndex = 4;
             this.statusGudangLabel.Text = "Status Gudang: -";
-            // 
-            // loadDataButton
-            // 
-            this.loadDataButton.Location = new System.Drawing.Point(542, 156);
-            this.loadDataButton.Name = "loadDataButton";
-            this.loadDataButton.Size = new System.Drawing.Size(207, 23);
-            this.loadDataButton.TabIndex = 3;
-            this.loadDataButton.Text = "Memuat Data";
-            this.loadDataButton.UseSelectable = true;
-            this.loadDataButton.Click += new System.EventHandler(this.loadDataButton_Click);
             // 
             // itemsDataGridView
             // 
@@ -188,7 +235,6 @@
             this.jumlahBarangTextBox.MaxLength = 32767;
             this.jumlahBarangTextBox.Name = "jumlahBarangTextBox";
             this.jumlahBarangTextBox.PasswordChar = '\0';
-            this.jumlahBarangTextBox.PromptText = "Jumlah";
             this.jumlahBarangTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.jumlahBarangTextBox.SelectedText = "";
             this.jumlahBarangTextBox.SelectionLength = 0;
@@ -220,7 +266,6 @@
             this.merkTextBox.MaxLength = 32767;
             this.merkTextBox.Name = "merkTextBox";
             this.merkTextBox.PasswordChar = '\0';
-            this.merkTextBox.PromptText = "Merk HP/Laptop";
             this.merkTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.merkTextBox.SelectedText = "";
             this.merkTextBox.SelectionLength = 0;
@@ -252,7 +297,6 @@
             this.namaBarangTextBox.MaxLength = 32767;
             this.namaBarangTextBox.Name = "namaBarangTextBox";
             this.namaBarangTextBox.PasswordChar = '\0';
-            this.namaBarangTextBox.PromptText = "Nama Barang";
             this.namaBarangTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.namaBarangTextBox.SelectedText = "";
             this.namaBarangTextBox.SelectionLength = 0;
@@ -264,16 +308,6 @@
             this.namaBarangTextBox.WaterMark = "Nama Barang";
             this.namaBarangTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.namaBarangTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // manajemenAkunButton
-            // 
-            this.manajemenAkunButton.Location = new System.Drawing.Point(588, 31);
-            this.manajemenAkunButton.Name = "manajemenAkunButton";
-            this.manajemenAkunButton.Size = new System.Drawing.Size(111, 23);
-            this.manajemenAkunButton.TabIndex = 2;
-            this.manajemenAkunButton.Text = "Manajemen Akun";
-            this.manajemenAkunButton.UseSelectable = true;
-            this.manajemenAkunButton.Click += new System.EventHandler(this.manajemenAkunButton_Click);
             // 
             // barangKeluarTabPage
             // 
@@ -295,53 +329,24 @@
             this.barangKeluarTabPage.VerticalScrollbarHighlightOnWheel = false;
             this.barangKeluarTabPage.VerticalScrollbarSize = 10;
             // 
-            // idBarangKeluarLabel
+            // logKeluarLabel
             // 
-            this.idBarangKeluarLabel.AutoSize = true;
-            this.idBarangKeluarLabel.Location = new System.Drawing.Point(3, 12);
-            this.idBarangKeluarLabel.Name = "idBarangKeluarLabel";
-            this.idBarangKeluarLabel.Size = new System.Drawing.Size(70, 19);
-            this.idBarangKeluarLabel.TabIndex = 2;
-            this.idBarangKeluarLabel.Text = "ID Barang:";
+            this.logKeluarLabel.AutoSize = true;
+            this.logKeluarLabel.Location = new System.Drawing.Point(3, 113);
+            this.logKeluarLabel.Name = "logKeluarLabel";
+            this.logKeluarLabel.Size = new System.Drawing.Size(44, 19);
+            this.logKeluarLabel.TabIndex = 7;
+            this.logKeluarLabel.Text = "Log: -";
             // 
-            // idBarangKeluarTextBox
+            // keluarkanButton
             // 
-            // 
-            // 
-            // 
-            this.idBarangKeluarTextBox.CustomButton.Image = null;
-            this.idBarangKeluarTextBox.CustomButton.Location = new System.Drawing.Point(173, 1);
-            this.idBarangKeluarTextBox.CustomButton.Name = "";
-            this.idBarangKeluarTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.idBarangKeluarTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.idBarangKeluarTextBox.CustomButton.TabIndex = 1;
-            this.idBarangKeluarTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.idBarangKeluarTextBox.CustomButton.UseSelectable = true;
-            this.idBarangKeluarTextBox.CustomButton.Visible = false;
-            this.idBarangKeluarTextBox.Lines = new string[0];
-            this.idBarangKeluarTextBox.Location = new System.Drawing.Point(79, 12);
-            this.idBarangKeluarTextBox.MaxLength = 32767;
-            this.idBarangKeluarTextBox.Name = "idBarangKeluarTextBox";
-            this.idBarangKeluarTextBox.PasswordChar = '\0';
-            this.idBarangKeluarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.idBarangKeluarTextBox.SelectedText = "";
-            this.idBarangKeluarTextBox.SelectionLength = 0;
-            this.idBarangKeluarTextBox.SelectionStart = 0;
-            this.idBarangKeluarTextBox.ShortcutsEnabled = true;
-            this.idBarangKeluarTextBox.Size = new System.Drawing.Size(195, 23);
-            this.idBarangKeluarTextBox.TabIndex = 3;
-            this.idBarangKeluarTextBox.UseSelectable = true;
-            this.idBarangKeluarTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.idBarangKeluarTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // jumlahKeluarLabel
-            // 
-            this.jumlahKeluarLabel.AutoSize = true;
-            this.jumlahKeluarLabel.Location = new System.Drawing.Point(3, 46);
-            this.jumlahKeluarLabel.Name = "jumlahKeluarLabel";
-            this.jumlahKeluarLabel.Size = new System.Drawing.Size(53, 19);
-            this.jumlahKeluarLabel.TabIndex = 4;
-            this.jumlahKeluarLabel.Text = "Jumlah:";
+            this.keluarkanButton.Location = new System.Drawing.Point(3, 75);
+            this.keluarkanButton.Name = "keluarkanButton";
+            this.keluarkanButton.Size = new System.Drawing.Size(271, 23);
+            this.keluarkanButton.TabIndex = 6;
+            this.keluarkanButton.Text = "Proses";
+            this.keluarkanButton.UseSelectable = true;
+            this.keluarkanButton.Click += new System.EventHandler(this.keluarkanButton_Click);
             // 
             // jumlahKeluarTextBox
             // 
@@ -373,24 +378,83 @@
             this.jumlahKeluarTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.jumlahKeluarTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // keluarkanButton
+            // jumlahKeluarLabel
             // 
-            this.keluarkanButton.Location = new System.Drawing.Point(3, 75);
-            this.keluarkanButton.Name = "keluarkanButton";
-            this.keluarkanButton.Size = new System.Drawing.Size(271, 23);
-            this.keluarkanButton.TabIndex = 6;
-            this.keluarkanButton.Text = "Proses";
-            this.keluarkanButton.UseSelectable = true;
-            this.keluarkanButton.Click += new System.EventHandler(this.keluarkanButton_Click);
+            this.jumlahKeluarLabel.AutoSize = true;
+            this.jumlahKeluarLabel.Location = new System.Drawing.Point(3, 46);
+            this.jumlahKeluarLabel.Name = "jumlahKeluarLabel";
+            this.jumlahKeluarLabel.Size = new System.Drawing.Size(53, 19);
+            this.jumlahKeluarLabel.TabIndex = 4;
+            this.jumlahKeluarLabel.Text = "Jumlah:";
             // 
-            // logKeluarLabel
+            // idBarangKeluarTextBox
             // 
-            this.logKeluarLabel.AutoSize = true;
-            this.logKeluarLabel.Location = new System.Drawing.Point(3, 113);
-            this.logKeluarLabel.Name = "logKeluarLabel";
-            this.logKeluarLabel.Size = new System.Drawing.Size(44, 19);
-            this.logKeluarLabel.TabIndex = 7;
-            this.logKeluarLabel.Text = "Log: -";
+            // 
+            // 
+            // 
+            this.idBarangKeluarTextBox.CustomButton.Image = null;
+            this.idBarangKeluarTextBox.CustomButton.Location = new System.Drawing.Point(173, 1);
+            this.idBarangKeluarTextBox.CustomButton.Name = "";
+            this.idBarangKeluarTextBox.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.idBarangKeluarTextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.idBarangKeluarTextBox.CustomButton.TabIndex = 1;
+            this.idBarangKeluarTextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.idBarangKeluarTextBox.CustomButton.UseSelectable = true;
+            this.idBarangKeluarTextBox.CustomButton.Visible = false;
+            this.idBarangKeluarTextBox.Lines = new string[0];
+            this.idBarangKeluarTextBox.Location = new System.Drawing.Point(79, 12);
+            this.idBarangKeluarTextBox.MaxLength = 32767;
+            this.idBarangKeluarTextBox.Name = "idBarangKeluarTextBox";
+            this.idBarangKeluarTextBox.PasswordChar = '\0';
+            this.idBarangKeluarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.idBarangKeluarTextBox.SelectedText = "";
+            this.idBarangKeluarTextBox.SelectionLength = 0;
+            this.idBarangKeluarTextBox.SelectionStart = 0;
+            this.idBarangKeluarTextBox.ShortcutsEnabled = true;
+            this.idBarangKeluarTextBox.Size = new System.Drawing.Size(195, 23);
+            this.idBarangKeluarTextBox.TabIndex = 3;
+            this.idBarangKeluarTextBox.UseSelectable = true;
+            this.idBarangKeluarTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.idBarangKeluarTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // idBarangKeluarLabel
+            // 
+            this.idBarangKeluarLabel.AutoSize = true;
+            this.idBarangKeluarLabel.Location = new System.Drawing.Point(3, 12);
+            this.idBarangKeluarLabel.Name = "idBarangKeluarLabel";
+            this.idBarangKeluarLabel.Size = new System.Drawing.Size(70, 19);
+            this.idBarangKeluarLabel.TabIndex = 2;
+            this.idBarangKeluarLabel.Text = "ID Barang:";
+            // 
+            // manajemenAkunButton
+            // 
+            this.manajemenAkunButton.Location = new System.Drawing.Point(588, 31);
+            this.manajemenAkunButton.Name = "manajemenAkunButton";
+            this.manajemenAkunButton.Size = new System.Drawing.Size(111, 23);
+            this.manajemenAkunButton.TabIndex = 2;
+            this.manajemenAkunButton.Text = "Manajemen Akun";
+            this.manajemenAkunButton.UseSelectable = true;
+            this.manajemenAkunButton.Click += new System.EventHandler(this.manajemenAkunButton_Click);
+            // 
+            // sortOrderToggle
+            // 
+            this.sortOrderToggle.AutoSize = true;
+            this.sortOrderToggle.Location = new System.Drawing.Point(22, 269);
+            this.sortOrderToggle.Name = "sortOrderToggle";
+            this.sortOrderToggle.Size = new System.Drawing.Size(80, 17);
+            this.sortOrderToggle.TabIndex = 9;
+            this.sortOrderToggle.Text = "Off";
+            this.sortOrderToggle.UseSelectable = true;
+            // 
+            // terapkanFilterButton
+            // 
+            this.terapkanFilterButton.Location = new System.Drawing.Point(149, 269);
+            this.terapkanFilterButton.Name = "terapkanFilterButton";
+            this.terapkanFilterButton.Size = new System.Drawing.Size(75, 23);
+            this.terapkanFilterButton.TabIndex = 10;
+            this.terapkanFilterButton.Text = "Terapkan";
+            this.terapkanFilterButton.UseSelectable = true;
+            this.terapkanFilterButton.Click += new System.EventHandler(this.terapkanFilterButton_Click);
             // 
             // MainDashboard
             // 
@@ -420,7 +484,6 @@
         private MetroFramework.Controls.MetroTabControl metroTabControl1;
         private MetroFramework.Controls.MetroTabPage barangTabPage;
         private MetroFramework.Controls.MetroTabPage gudangTabPage;
-        private MetroFramework.Controls.MetroButton loadDataButton;
         private System.Windows.Forms.DataGridView itemsDataGridView;
         private MetroFramework.Controls.MetroButton tambahBarangButton;
         private MetroFramework.Controls.MetroComboBox kategoriComboBox;
@@ -436,5 +499,11 @@
         private MetroFramework.Controls.MetroLabel jumlahKeluarLabel;
         private MetroFramework.Controls.MetroTextBox idBarangKeluarTextBox;
         private MetroFramework.Controls.MetroLabel idBarangKeluarLabel;
+        private MetroFramework.Controls.MetroComboBox sortByComboBox;
+        private MetroFramework.Controls.MetroLabel sortLabel;
+        private MetroFramework.Controls.MetroComboBox filterKategoriComboBox;
+        private MetroFramework.Controls.MetroLabel filterLabel;
+        private MetroFramework.Controls.MetroButton terapkanFilterButton;
+        private MetroFramework.Controls.MetroToggle sortOrderToggle;
     }
 }

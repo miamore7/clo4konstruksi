@@ -16,5 +16,11 @@
     "Password": "user",
     "Role": "user",
     "IsActive": true
+  },
+  {
+    "Username": "tita",
+    "Password": "tita",
+    "Role": "admin",
+    "IsActive": true
   }
 ]

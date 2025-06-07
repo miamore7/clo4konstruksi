@@ -224,7 +224,6 @@
             this.merkTextBox.MaxLength = 32767;
             this.merkTextBox.Name = "merkTextBox";
             this.merkTextBox.PasswordChar = '\0';
-            this.merkTextBox.PromptText = "Merk HP/Laptop";
             this.merkTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.merkTextBox.SelectedText = "";
             this.merkTextBox.SelectionLength = 0;
@@ -279,7 +278,6 @@
             this.jumlahBarangTextBox.MaxLength = 32767;
             this.jumlahBarangTextBox.Name = "jumlahBarangTextBox";
             this.jumlahBarangTextBox.PasswordChar = '\0';
-            this.jumlahBarangTextBox.PromptText = "Jumlah";
             this.jumlahBarangTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.jumlahBarangTextBox.SelectedText = "";
             this.jumlahBarangTextBox.SelectionLength = 0;
@@ -311,7 +309,6 @@
             this.namaBarangTextBox.MaxLength = 32767;
             this.namaBarangTextBox.Name = "namaBarangTextBox";
             this.namaBarangTextBox.PasswordChar = '\0';
-            this.namaBarangTextBox.PromptText = "Nama Barang";
             this.namaBarangTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.namaBarangTextBox.SelectedText = "";
             this.namaBarangTextBox.SelectionLength = 0;
@@ -382,7 +379,6 @@
             this.jumlahKeluarTextBox.MaxLength = 32767;
             this.jumlahKeluarTextBox.Name = "jumlahKeluarTextBox";
             this.jumlahKeluarTextBox.PasswordChar = '\0';
-            this.jumlahKeluarTextBox.PromptText = "Jumlah";
             this.jumlahKeluarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.jumlahKeluarTextBox.SelectedText = "";
             this.jumlahKeluarTextBox.SelectionLength = 0;
@@ -432,7 +428,6 @@
             this.idBarangKeluarTextBox.MaxLength = 32767;
             this.idBarangKeluarTextBox.Name = "idBarangKeluarTextBox";
             this.idBarangKeluarTextBox.PasswordChar = '\0';
-            this.idBarangKeluarTextBox.PromptText = "ID Barang";
             this.idBarangKeluarTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.idBarangKeluarTextBox.SelectedText = "";
             this.idBarangKeluarTextBox.SelectionLength = 0;

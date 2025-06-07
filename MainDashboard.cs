@@ -18,19 +18,17 @@ namespace clo4konstruksi
 
         private void MainDashboard_Load(object sender, EventArgs e)
         {
-            // Muat data awal
+            // 1. Atur tampilan filter & sort dari konfigurasi yang tersimpan
+            filterKategoriComboBox.SelectedItem = _loginService.ViewConfig.Kategori;
+            sortByComboBox.SelectedItem = _loginService.ViewConfig.UrutkanBerdasarkan;
+            sortOrderToggle.Checked = _loginService.ViewConfig.Naik;
+
+            // 2. Muat data awal untuk tabel dan status gudang
             LoadAllItems();
             UpdateCapacityStatus();
 
-            // Logika BARU: Tombol Manajemen Akun hanya terlihat untuk Super Admin
-            if (LoginService.Instance.LoggedInUser.Role == "SuperAdmin")
-            {
-                manajemenAkunButton.Visible = true;
-            }
-            else
-            {
-                manajemenAkunButton.Visible = false;
-            }
+            // 3. Atur hak akses untuk tombol Manajemen Akun (hanya terlihat oleh SuperAdmin)
+            manajemenAkunButton.Visible = (LoginService.Instance.LoggedInUser.Role == "SuperAdmin");
         }
 
         // --- Tombol Navigasi Utama ---
@@ -62,8 +60,14 @@ namespace clo4konstruksi
 
         private void LoadAllItems()
         {
+            var config = new FilterSortConfig
+            {
+                Kategori = filterKategoriComboBox.Text,
+                UrutkanBerdasarkan = sortByComboBox.Text,
+                Naik = sortOrderToggle.Checked
+            };
             itemsDataGridView.DataSource = null;
-            itemsDataGridView.DataSource = _loginService.GetItems();
+            itemsDataGridView.DataSource = _loginService.GetFilteredAndSortedItems(config);
         }
 
         // --- Logika untuk Tab Barang Masuk (dulu Operasi Gudang) ---
@@ -149,6 +153,11 @@ namespace clo4konstruksi
                 idBarangKeluarTextBox.Clear();
                 jumlahKeluarTextBox.Clear();
             }
+        }
+
+        private void terapkanFilterButton_Click(object sender, EventArgs e)
+        {
+            LoadAllItems();
         }
     }
 }

@@ -1,37 +1,34 @@
 [
-  {
-    "Id": "HP001",
-    "Name": "Galaxy S21",
-    "Merk": "Samsung",
-    "Category": "HP",
-    "Quantity": 8
-  },
-  {
-    "Id": "HP002",
-    "Name": "iPhone 13",
-    "Merk": "Apple",
-    "Category": "HP",
-    "Quantity": 7
-  },
-  {
-    "Id": "LP001",
-    "Name": "XPS 13",
-    "Merk": "Dell",
-    "Category": "Laptop",
-    "Quantity": 5
-  },
-  {
-    "Id": "LP002",
-    "Name": "MacBook Pro",
-    "Merk": "Apple",
-    "Category": "Laptop",
-    "Quantity": 3
-  },
-  {
-    "Id": "LP003",
-    "Name": "Nitro 5",
-    "Merk": "Acer",
-    "Category": "Laptop",
-    "Quantity": 10
-  }
+    {
+        "Id": "HP001",
+        "Name": "Galaxy S21",
+        "Merk": "Samsung",
+        "Category": "HP",
+        "Quantity": 10,
+        "TanggalMasuk": "2025-05-01T10:00:00Z"
+    },
+    {
+        "Id": "HP002",
+        "Name": "iPhone 13",
+        "Merk": "Apple",
+        "Category": "HP",
+        "Quantity": 7,
+        "TanggalMasuk": "2025-05-15T11:30:00Z"
+    },
+    {
+        "Id": "LP001",
+        "Name": "XPS 13",
+        "Merk": "Dell",
+        "Category": "Laptop",
+        "Quantity": 5,
+        "TanggalMasuk": "2025-06-01T09:00:00Z"
+    },
+    {
+        "Id": "LP002",
+        "Name": "MacBook Pro",
+        "Merk": "Apple",
+        "Category": "Laptop",
+        "Quantity": 3,
+        "TanggalMasuk": "2025-04-20T14:00:00Z"
+    }
 ]

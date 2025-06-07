@@ -39,3 +39,4 @@ E:\Kuliah\Semester6\KONSTRUKSI-PERANGKAT-LUNAK\clo4konstruksi\obj\Debug\clo4kons
 E:\Kuliah\Semester6\KONSTRUKSI-PERANGKAT-LUNAK\clo4konstruksi\obj\Debug\clo4konstruksi.pdb
 E:\Kuliah\Semester6\KONSTRUKSI-PERANGKAT-LUNAK\clo4konstruksi\obj\Debug\clo4konstruksi.MainDashboard.resources
 E:\Kuliah\Semester6\KONSTRUKSI-PERANGKAT-LUNAK\clo4konstruksi\obj\Debug\clo4konstruksi.ManajemenAkunForm.resources
+E:\Kuliah\Semester6\KONSTRUKSI-PERANGKAT-LUNAK\clo4konstruksi\bin\Debug\Data\TampilanConfig.json
