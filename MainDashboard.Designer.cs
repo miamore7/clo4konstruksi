@@ -40,13 +40,18 @@
             this.statusGudangLabel = new MetroFramework.Controls.MetroLabel();
             this.itemsDataGridView = new System.Windows.Forms.DataGridView();
             this.gudangTabPage = new MetroFramework.Controls.MetroTabPage();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.jenisLabel = new MetroFramework.Controls.MetroLabel();
+            this.jumlahLabel = new MetroFramework.Controls.MetroLabel();
+            this.merkLabel = new MetroFramework.Controls.MetroLabel();
+            this.idBarangLabel = new MetroFramework.Controls.MetroLabel();
+            this.inboundTitleLabel = new MetroFramework.Controls.MetroLabel();
             this.tambahBarangButton = new MetroFramework.Controls.MetroButton();
             this.kategoriComboBox = new MetroFramework.Controls.MetroComboBox();
             this.jumlahBarangTextBox = new MetroFramework.Controls.MetroTextBox();
             this.merkTextBox = new MetroFramework.Controls.MetroTextBox();
             this.namaBarangTextBox = new MetroFramework.Controls.MetroTextBox();
             this.barangKeluarTabPage = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.logKeluarLabel = new MetroFramework.Controls.MetroLabel();
             this.keluarkanButton = new MetroFramework.Controls.MetroButton();
             this.jumlahKeluarTextBox = new MetroFramework.Controls.MetroTextBox();
@@ -54,11 +59,8 @@
             this.idBarangKeluarTextBox = new MetroFramework.Controls.MetroTextBox();
             this.idBarangKeluarLabel = new MetroFramework.Controls.MetroLabel();
             this.manajemenAkunButton = new MetroFramework.Controls.MetroButton();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.languageToggle = new MetroFramework.Controls.MetroToggle();
+            this.languageLabel = new MetroFramework.Controls.MetroLabel();
             this.metroTabControl1.SuspendLayout();
             this.barangTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemsDataGridView)).BeginInit();
@@ -202,11 +204,11 @@
             // 
             // gudangTabPage
             // 
-            this.gudangTabPage.Controls.Add(this.metroLabel5);
-            this.gudangTabPage.Controls.Add(this.metroLabel4);
-            this.gudangTabPage.Controls.Add(this.metroLabel2);
-            this.gudangTabPage.Controls.Add(this.metroLabel3);
-            this.gudangTabPage.Controls.Add(this.metroLabel1);
+            this.gudangTabPage.Controls.Add(this.jenisLabel);
+            this.gudangTabPage.Controls.Add(this.jumlahLabel);
+            this.gudangTabPage.Controls.Add(this.merkLabel);
+            this.gudangTabPage.Controls.Add(this.idBarangLabel);
+            this.gudangTabPage.Controls.Add(this.inboundTitleLabel);
             this.gudangTabPage.Controls.Add(this.tambahBarangButton);
             this.gudangTabPage.Controls.Add(this.kategoriComboBox);
             this.gudangTabPage.Controls.Add(this.jumlahBarangTextBox);
@@ -224,15 +226,51 @@
             this.gudangTabPage.VerticalScrollbarHighlightOnWheel = false;
             this.gudangTabPage.VerticalScrollbarSize = 10;
             // 
-            // metroLabel1
+            // jenisLabel
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.Location = new System.Drawing.Point(318, 39);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(120, 25);
-            this.metroLabel1.TabIndex = 8;
-            this.metroLabel1.Text = "Barang Masuk";
+            this.jenisLabel.AutoSize = true;
+            this.jenisLabel.Location = new System.Drawing.Point(229, 197);
+            this.jenisLabel.Name = "jenisLabel";
+            this.jenisLabel.Size = new System.Drawing.Size(39, 19);
+            this.jenisLabel.TabIndex = 12;
+            this.jenisLabel.Text = "Jenis:";
+            // 
+            // jumlahLabel
+            // 
+            this.jumlahLabel.AutoSize = true;
+            this.jumlahLabel.Location = new System.Drawing.Point(215, 157);
+            this.jumlahLabel.Name = "jumlahLabel";
+            this.jumlahLabel.Size = new System.Drawing.Size(53, 19);
+            this.jumlahLabel.TabIndex = 11;
+            this.jumlahLabel.Text = "Jumlah:";
+            // 
+            // merkLabel
+            // 
+            this.merkLabel.AutoSize = true;
+            this.merkLabel.Location = new System.Drawing.Point(197, 119);
+            this.merkLabel.Name = "merkLabel";
+            this.merkLabel.Size = new System.Drawing.Size(71, 19);
+            this.merkLabel.TabIndex = 10;
+            this.merkLabel.Text = "Tipe Merk:";
+            // 
+            // idBarangLabel
+            // 
+            this.idBarangLabel.AutoSize = true;
+            this.idBarangLabel.Location = new System.Drawing.Point(205, 78);
+            this.idBarangLabel.Name = "idBarangLabel";
+            this.idBarangLabel.Size = new System.Drawing.Size(70, 19);
+            this.idBarangLabel.TabIndex = 9;
+            this.idBarangLabel.Text = "ID Barang:";
+            // 
+            // inboundTitleLabel
+            // 
+            this.inboundTitleLabel.AutoSize = true;
+            this.inboundTitleLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.inboundTitleLabel.Location = new System.Drawing.Point(318, 39);
+            this.inboundTitleLabel.Name = "inboundTitleLabel";
+            this.inboundTitleLabel.Size = new System.Drawing.Size(120, 25);
+            this.inboundTitleLabel.TabIndex = 8;
+            this.inboundTitleLabel.Text = "Barang Masuk";
             // 
             // tambahBarangButton
             // 
@@ -374,6 +412,16 @@
             this.barangKeluarTabPage.VerticalScrollbarHighlightOnWheel = false;
             this.barangKeluarTabPage.VerticalScrollbarSize = 10;
             // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel6.Location = new System.Drawing.Point(310, 51);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(118, 25);
+            this.metroLabel6.TabIndex = 9;
+            this.metroLabel6.Text = "Barang Keluar";
+            // 
             // logKeluarLabel
             // 
             this.logKeluarLabel.AutoSize = true;
@@ -481,57 +529,33 @@
             this.manajemenAkunButton.UseSelectable = true;
             this.manajemenAkunButton.Click += new System.EventHandler(this.manajemenAkunButton_Click);
             // 
-            // metroLabel2
+            // languageToggle
             // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(197, 119);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(71, 19);
-            this.metroLabel2.TabIndex = 10;
-            this.metroLabel2.Text = "Tipe Merk:";
+            this.languageToggle.AutoSize = true;
+            this.languageToggle.Location = new System.Drawing.Point(480, 37);
+            this.languageToggle.Name = "languageToggle";
+            this.languageToggle.Size = new System.Drawing.Size(80, 17);
+            this.languageToggle.TabIndex = 3;
+            this.languageToggle.Text = "Off";
+            this.languageToggle.UseSelectable = true;
+            this.languageToggle.CheckedChanged += new System.EventHandler(this.languageToggle_CheckedChanged);
             // 
-            // metroLabel3
+            // languageLabel
             // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(205, 78);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(70, 19);
-            this.metroLabel3.TabIndex = 9;
-            this.metroLabel3.Text = "ID Barang:";
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(215, 157);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(53, 19);
-            this.metroLabel4.TabIndex = 11;
-            this.metroLabel4.Text = "Jumlah:";
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(229, 197);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(39, 19);
-            this.metroLabel5.TabIndex = 12;
-            this.metroLabel5.Text = "Jenis:";
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel6.Location = new System.Drawing.Point(310, 51);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(118, 25);
-            this.metroLabel6.TabIndex = 9;
-            this.metroLabel6.Text = "Barang Keluar";
+            this.languageLabel.AutoSize = true;
+            this.languageLabel.Location = new System.Drawing.Point(391, 35);
+            this.languageLabel.Name = "languageLabel";
+            this.languageLabel.Size = new System.Drawing.Size(64, 19);
+            this.languageLabel.TabIndex = 4;
+            this.languageLabel.Text = "Indonesia";
             // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.languageLabel);
+            this.Controls.Add(this.languageToggle);
             this.Controls.Add(this.manajemenAkunButton);
             this.Controls.Add(this.metroTabControl1);
             this.Controls.Add(this.logoutButton);
@@ -547,6 +571,7 @@
             this.barangKeluarTabPage.ResumeLayout(false);
             this.barangKeluarTabPage.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -577,11 +602,13 @@
         private MetroFramework.Controls.MetroLabel filterLabel;
         private MetroFramework.Controls.MetroButton terapkanFilterButton;
         private MetroFramework.Controls.MetroToggle sortOrderToggle;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel inboundTitleLabel;
+        private MetroFramework.Controls.MetroLabel jenisLabel;
+        private MetroFramework.Controls.MetroLabel jumlahLabel;
+        private MetroFramework.Controls.MetroLabel merkLabel;
+        private MetroFramework.Controls.MetroLabel idBarangLabel;
         private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroToggle languageToggle;
+        private MetroFramework.Controls.MetroLabel languageLabel;
     }
 }

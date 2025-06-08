@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace clo4konstruksi
 {
@@ -7,6 +8,30 @@ namespace clo4konstruksi
     {
         private LoginService _loginService;
         private Form _loginForm; // Untuk kembali ke dashboard
+
+        private void UpdateUITexts()
+        {
+            var lang = LoginService.Instance.LangManager;
+
+            this.Text = lang.Get("TabAccounts");
+
+            // Atur judul GroupBox
+            groupBox1.Text = lang.Get("CreateAccountTitle");
+
+            // Atur WaterMark untuk TextBox
+            newUsernameTextBox.WaterMark = lang.Get("NewUsernamePrompt");
+            newPasswordTextBox.WaterMark = lang.Get("NewPasswordPrompt");
+
+            // Atur teks semua tombol
+            loadAdminButton.Text = lang.Get("LoadAdminButton");
+            setActiveButton.Text = lang.Get("ActivateButton");
+            setInactiveButton.Text = lang.Get("DeactivateButton");
+            createAdminButton.Text = lang.Get("CreateAccountButton");
+            deleteAdminButton.Text = lang.Get("DeleteAccountButton");
+
+            // Menggunakan kunci "BackButton" yang baru
+            kembaliButton.Text = lang.Get("BackButton");
+        }
 
         public ManajemenAkunForm(Form loginForm)
         {
@@ -18,6 +43,7 @@ namespace clo4konstruksi
         private void ManajemenAkunForm_Load(object sender, EventArgs e)
         {
             LoadUserData();
+            UpdateUITexts();
         }
 
         private void LoadUserData()

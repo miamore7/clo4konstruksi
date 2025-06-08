@@ -9,6 +9,45 @@ namespace clo4konstruksi
         private LoginService _loginService;
         private Form _loginForm;
 
+        // Di dalam file MainDashboard.cs
+        private void UpdateUITexts()
+        {
+            var lang = LoginService.Instance.LangManager;
+
+            // --- Komponen Utama & Label Bahasa ---
+            logoutButton.Text = lang.Get("LogoutButton");
+            manajemenAkunButton.Text = lang.Get("TabAccounts");
+            languageLabel.Text = lang.Get("LanguageLabel");
+
+            // --- Judul Tab ---
+            barangTabPage.Text = lang.Get("TabItems");
+            gudangTabPage.Text = lang.Get("TabInbound");
+            barangKeluarTabPage.Text = lang.Get("TabOutbound");
+
+            // --- Kontrol di Tab Data Barang ---
+            filterLabel.Text = lang.Get("FilterCategoryLabel");
+            sortLabel.Text = lang.Get("SortByLabel");
+            sortOrderToggle.Text = lang.Get("SortOrderLabel");
+            terapkanFilterButton.Text = lang.Get("ApplyFilterButton");
+            if (filterKategoriComboBox.Items.Count > 0)
+            {
+                filterKategoriComboBox.Items[0] = lang.Get("AllFilter");
+            }
+
+            // --- BAGIAN BARU UNTUK TAB BARANG MASUK ---
+            inboundTitleLabel.Text = lang.Get("InboundGoodsTitle");
+            idBarangLabel.Text = lang.Get("ItemIDLabel");
+            merkLabel.Text = lang.Get("BrandLabel");
+            jumlahLabel.Text = lang.Get("QuantityLabel");
+            jenisLabel.Text = lang.Get("CategoryLabel");
+            tambahBarangButton.Text = lang.Get("AddItemButton");
+
+            // --- Kontrol di Tab Barang Keluar ---
+            keluarkanButton.Text = lang.Get("IssueItemButton");
+            idBarangKeluarLabel.Text = lang.Get("InputID");
+            jumlahKeluarLabel.Text = lang.Get("InputJumlah");
+        }
+
         public MainDashboard(Form loginForm)
         {
             InitializeComponent();
@@ -26,6 +65,7 @@ namespace clo4konstruksi
             // 2. Muat data awal untuk tabel dan status gudang
             LoadAllItems();
             UpdateCapacityStatus();
+            UpdateUITexts();
 
             // 3. Atur hak akses untuk tombol Manajemen Akun (hanya terlihat oleh SuperAdmin)
             manajemenAkunButton.Visible = (LoginService.Instance.LoggedInUser.Role == "SuperAdmin");
@@ -74,8 +114,7 @@ namespace clo4konstruksi
 
         private void UpdateCapacityStatus()
         {
-            // Pastikan label ini ada di tab "Data Barang" atau di luar tab
-            statusGudangLabel.Text = LoginService.Instance.InvManager.GetWarehouseStatus();
+            statusGudangLabel.Text = LoginService.Instance.InvManager.GetWarehouseStatus(LoginService.Instance.LangManager);
         }
 
         private void tambahBarangButton_Click(object sender, EventArgs e)
@@ -158,6 +197,27 @@ namespace clo4konstruksi
         private void terapkanFilterButton_Click(object sender, EventArgs e)
         {
             LoadAllItems();
+        }
+
+        private void languageToggle_CheckedChanged(object sender, EventArgs e)
+        {
+            // Ambil instance LangManager untuk kemudahan
+            var langManager = LoginService.Instance.LangManager;
+
+            // Periksa status toggle
+            if (languageToggle.Checked)
+            {
+                // Jika ON, ganti bahasa ke Inggris
+                langManager.LoadLanguage("EN");
+            }
+            else
+            {
+                // Jika OFF, ganti bahasa ke Indonesia
+                langManager.LoadLanguage("ID");
+            }
+
+            // Setelah bahasa diganti, panggil metode untuk memperbarui semua teks di UI
+            UpdateUITexts();
         }
     }
 }

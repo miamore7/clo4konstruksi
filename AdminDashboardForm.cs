@@ -56,7 +56,12 @@ namespace clo4konstruksi
             MessageBox.Show($"Status user '{username}' berhasil diubah.");
         }
 
-        private void UpdateCapacityStatus() { statusGudangLabel.Text = LoginService.Instance.InvManager.GetWarehouseStatus(); }
+        private void UpdateCapacityStatus()
+        {
+            // Versi baru yang sudah benar, dengan memberikan parameter yang dibutuhkan
+            statusGudangLabel.Text = LoginService.Instance.InvManager.GetWarehouseStatus(LoginService.Instance.LangManager);
+        }
+
         private void tambahBarangButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(namaBarangTextBox.Text) || string.IsNullOrWhiteSpace(merkTextBox.Text) || string.IsNullOrWhiteSpace(jumlahBarangTextBox.Text) || kategoriComboBox.SelectedItem == null) { MessageBox.Show("Semua kolom harus diisi."); return; }

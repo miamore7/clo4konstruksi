@@ -64,9 +64,10 @@ namespace clo4konstruksi
             }
         }
 
-        public string GetWarehouseStatus()
+        public string GetWarehouseStatus(LanguageManager lang)
         {
-            StringBuilder status = new StringBuilder("Kapasitas Gudang: ");
+            // Ambil teks dari LanguageManager, bukan hardcoded
+            StringBuilder status = new StringBuilder(lang.Get("WarehouseCapacity") + " ");
             foreach (var category in categoryCapacities.Keys)
             {
                 int currentQty = GetCurrentQuantityFor(category);
