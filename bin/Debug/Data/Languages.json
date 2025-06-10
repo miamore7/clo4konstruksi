@@ -63,7 +63,7 @@
         "CreateAccountTitle": "Create New Admin Account",
         "NewUsernamePrompt": "New Username",
         "NewPasswordPrompt": "New Password",
-        "AllFilter": "(All)",
+        "AllFilter": "(Semua)",
         "InputID": "Item ID:",
         "InputJumlah": "Quantity:",
         "SuccessMessage": "{0} {1} has been issued! Stock changed from {2} to {3}.",
