@@ -11,15 +11,16 @@
 - **IDE**: Visual Studio 2022
 - **Design Pattern**: 
 - **Version Control**: GitHub
+- **NuGet**: MetroModernUI, System.Text.Json
 
 ---
 
 ## 📋 Anggota Kelompok & Tanggung Jawab
 | Nama                        | NIM         | Fitur yang Dikembangkan                  |
 |-----------------------------|-------------|------------------------------------------|
-| Muhammad Ageng Sasmito      | 1201220001  | Barang Keluar, Managemen Akun            |
-| Farrel Gilang N.M.          | 1201220022  | Sorting                                  |
-| Euangelion Michael Didimus  | 1201220029  | Barang Masuk                             |
-| Anggota 4                   | 1201220000  |                                          |
+|                             | 1201220000  |                                          |
+|                             | 1201220000  |                                          |
+|                             | 1201220000  |                                          |
+|                             | 1201220000  |                                          |
 
 ---
