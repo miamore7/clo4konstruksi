@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace clo4konstruksi
 {
@@ -9,22 +10,18 @@ namespace clo4konstruksi
         private LoginService _loginService;
         private Form _loginForm;
 
-        // Di dalam file MainDashboard.cs
+        // Metode untuk memperbarui semua teks di form ini
         private void UpdateUITexts()
         {
             var lang = LoginService.Instance.LangManager;
 
-            // --- Komponen Utama & Label Bahasa ---
+            // Komponen Utama
             logoutButton.Text = lang.Get("LogoutButton");
             manajemenAkunButton.Text = lang.Get("TabAccounts");
+            transaksiButton.Text = lang.Get("TransactionButton");
             languageLabel.Text = lang.Get("LanguageLabel");
 
-            // --- Judul Tab ---
-            barangTabPage.Text = lang.Get("TabItems");
-            gudangTabPage.Text = lang.Get("TabInbound");
-            barangKeluarTabPage.Text = lang.Get("TabOutbound");
-
-            // --- Kontrol di Tab Data Barang ---
+            // Kontrol di Tab Data Barang
             filterLabel.Text = lang.Get("FilterCategoryLabel");
             sortLabel.Text = lang.Get("SortByLabel");
             sortOrderToggle.Text = lang.Get("SortOrderLabel");
@@ -33,19 +30,25 @@ namespace clo4konstruksi
             {
                 filterKategoriComboBox.Items[0] = lang.Get("AllFilter");
             }
+        }
 
-            // --- BAGIAN YANG DIPERBAIKI UNTUK TAB BARANG MASUK ---
-            inboundTitleLabel.Text = lang.Get("InboundGoodsTitle");
-            // idBarangLabel.Text dihapus dari sini
-            TipeBarangLabel.Text = lang.Get("BrandLabel"); // Menggunakan nama baru untuk label Merk
-            jumlahLabel.Text = lang.Get("QuantityLabel");
-            jenisLabel.Text = lang.Get("CategoryLabel");
-            tambahBarangButton.Text = lang.Get("AddItemButton");
+        // Metode yang akan berjalan saat toggle di-klik
+        private void languageToggle_CheckedChanged(object sender, EventArgs e)
+        {
+            var langManager = LoginService.Instance.LangManager;
 
-            // --- Kontrol di Tab Barang Keluar ---
-            keluarkanButton.Text = lang.Get("IssueItemButton");
-            idBarangKeluarLabel.Text = lang.Get("InputID");
-            jumlahKeluarLabel.Text = lang.Get("InputJumlah");
+            // Ganti bahasa berdasarkan status toggle
+            if (languageToggle.Checked)
+            {
+                langManager.LoadLanguage("EN"); // ON = English
+            }
+            else
+            {
+                langManager.LoadLanguage("ID"); // OFF = Indonesia
+            }
+
+            // Panggil metode untuk memperbarui semua teks di UI
+            UpdateUITexts();
         }
 
         public MainDashboard(Form loginForm)
@@ -57,27 +60,69 @@ namespace clo4konstruksi
 
         private void MainDashboard_Load(object sender, EventArgs e)
         {
-            // 1. Atur tampilan filter & sort dari konfigurasi yang tersimpan
+            // Atur filter dan muat data
             filterKategoriComboBox.SelectedItem = _loginService.ViewConfig.Kategori;
             sortByComboBox.SelectedItem = _loginService.ViewConfig.UrutkanBerdasarkan;
             sortOrderToggle.Checked = _loginService.ViewConfig.Naik;
-
-            // 2. Muat data awal untuk tabel dan status gudang
             LoadAllItems();
             UpdateCapacityStatus();
             UpdateUITexts();
 
-            // 3. Atur hak akses untuk tombol Manajemen Akun (hanya terlihat oleh SuperAdmin)
+            // Atur visibilitas tombol berdasarkan peran
             manajemenAkunButton.Visible = (LoginService.Instance.LoggedInUser.Role == "SuperAdmin");
         }
 
-        // --- Tombol Navigasi Utama ---
+        private void LoadAllItems()
+        {
+            // 1. Ambil semua konfigurasi dari UI
+            var config = new FilterSortConfig
+            {
+                Kategori = filterKategoriComboBox.Text,
+                UrutkanBerdasarkan = sortByComboBox.Text,
+                Naik = sortOrderToggle.Checked
+            };
+
+            // 2. Ambil data yang sudah di-filter dan di-sort dari LoginService
+            List<Item> filteredAndSortedItems = _loginService.GetFilteredAndSortedItems(config);
+
+            // 3. Ambil teks pencarian dari searchTextBox
+            string searchTerm = searchTextBox.Text.ToLower().Trim();
+
+            // 4. Lakukan pencarian di atas data yang sudah di-filter & sort
+            List<Item> finalResult;
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                // Jika kotak pencarian kosong, tampilkan semua hasil filter & sort
+                finalResult = filteredAndSortedItems;
+            }
+            else
+            {
+                // Jika ada teks pencarian, filter lebih lanjut
+                finalResult = filteredAndSortedItems.Where(item =>
+                    item.Name.ToLower().Contains(searchTerm) ||
+                    item.Merk.ToLower().Contains(searchTerm)
+                ).ToList();
+            }
+
+            // 5. Tampilkan hasil akhir ke tabel
+            itemsDataGridView.DataSource = null;
+            itemsDataGridView.DataSource = finalResult;
+        }
+
+        private void terapkanFilterButton_Click(object sender, EventArgs e)
+        {
+            _loginService.ViewConfig.Kategori = filterKategoriComboBox.Text;
+            _loginService.ViewConfig.UrutkanBerdasarkan = sortByComboBox.Text;
+            _loginService.ViewConfig.Naik = sortOrderToggle.Checked;
+            _loginService.SaveViewConfig();
+            LoadAllItems();
+        }
 
         private void logoutButton_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Anda yakin ingin keluar?", "Konfirmasi Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            // ... logika logout ...
+            if (MessageBox.Show("Anda yakin?", "Konfirmasi", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                LoginService.Instance.Logout();
                 _loginForm.Show();
                 this.Close();
             }
@@ -85,139 +130,29 @@ namespace clo4konstruksi
 
         private void manajemenAkunButton_Click(object sender, EventArgs e)
         {
-            // Buka form manajemen akun dan tutup form ini
-            ManajemenAkunForm formAkun = new ManajemenAkunForm(_loginForm);
-            formAkun.Show();
+            ManajemenAkunForm form = new ManajemenAkunForm(_loginForm);
+            form.Show();
             this.Close();
         }
 
-        // --- Logika untuk Tab Data Barang ---
-
-        private void loadDataButton_Click(object sender, EventArgs e)
+        // Tombol BARU untuk navigasi
+        private void transaksiButton_Click(object sender, EventArgs e)
         {
-            LoadAllItems();
+            TransaksiBarangForm form = new TransaksiBarangForm(_loginForm);
+            form.Show();
+            this.Close();
         }
-
-        private void LoadAllItems()
-        {
-            var config = new FilterSortConfig
-            {
-                Kategori = filterKategoriComboBox.Text,
-                UrutkanBerdasarkan = sortByComboBox.Text,
-                Naik = sortOrderToggle.Checked
-            };
-            itemsDataGridView.DataSource = null;
-            itemsDataGridView.DataSource = _loginService.GetFilteredAndSortedItems(config);
-        }
-
-        // --- Logika untuk Tab Barang Masuk (dulu Operasi Gudang) ---
 
         private void UpdateCapacityStatus()
         {
+            // Memanggil metode GetWarehouseStatus dan memberikan LanguageManager sebagai parameter
             statusGudangLabel.Text = LoginService.Instance.InvManager.GetWarehouseStatus(LoginService.Instance.LangManager);
         }
 
-        private void tambahBarangButton_Click(object sender, EventArgs e)
+        private void searchTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(namaBarangTextBox.Text) || string.IsNullOrWhiteSpace(merkTextBox.Text) || string.IsNullOrWhiteSpace(jumlahBarangTextBox.Text) || kategoriComboBox.SelectedItem == null)
-            {
-                MessageBox.Show("Semua kolom harus diisi.");
-                return;
-            }
-            if (!int.TryParse(jumlahBarangTextBox.Text, out int jumlah) || jumlah <= 0)
-            {
-                MessageBox.Show("Jumlah harus angka positif.");
-                return;
-            }
-
-            var newItem = new Item { Name = namaBarangTextBox.Text, Merk = merkTextBox.Text, Category = kategoriComboBox.SelectedItem.ToString(), Quantity = jumlah };
-
-            if (LoginService.Instance.InvManager.CanAddItem(newItem, out string errorMessage))
-            {
-                LoginService.Instance.InvManager.AddItem(newItem);
-                LoginService.Instance.SaveItems();
-                MessageBox.Show("Barang berhasil ditambahkan/diupdate.");
-
-                namaBarangTextBox.Clear();
-                merkTextBox.Clear();
-                jumlahBarangTextBox.Clear();
-
-                LoadAllItems();
-                UpdateCapacityStatus();
-            }
-            else
-            {
-                MessageBox.Show(errorMessage, "Kapasitas Penuh");
-            }
-        }
-
-        private void keluarkanButton_Click(object sender, EventArgs e)
-        {
-            var lang = LoginService.Instance.LangManager;
-            try
-            {
-                if (string.IsNullOrWhiteSpace(idBarangKeluarTextBox.Text))
-                {
-                    throw new ArgumentException(lang.Get("Error_IDKosong"));
-                }
-                if (!int.TryParse(jumlahKeluarTextBox.Text, out int jumlah) || jumlah <= 0)
-                {
-                    throw new ArgumentException(lang.Get("Error_JumlahInvalid"));
-                }
-
-                string idToFind = idBarangKeluarTextBox.Text;
-                var barang = LoginService.Instance.GetItems().Find(b => b.Id.Equals(idToFind, StringComparison.OrdinalIgnoreCase));
-
-                if (barang == null)
-                {
-                    throw new KeyNotFoundException(lang.Format("Error_BarangTidakDitemukan", idToFind));
-                }
-
-                int stokLama = barang.Quantity;
-                LoginService.Instance.BarangKeluarMgr.KeluarkanBarang(barang, jumlah);
-
-                // Simpan perubahan dan update semua tampilan
-                LoginService.Instance.SaveItems();
-                LoadAllItems();
-                UpdateCapacityStatus();
-
-                logKeluarLabel.Text = $"Log: {lang.Format("SuccessMessage", jumlah, barang.Name, stokLama, barang.Quantity)}";
-            }
-            catch (Exception ex)
-            {
-                logKeluarLabel.Text = $"Log: {lang.Get("Error_General")} {ex.Message}";
-            }
-            finally
-            {
-                idBarangKeluarTextBox.Clear();
-                jumlahKeluarTextBox.Clear();
-            }
-        }
-
-        private void terapkanFilterButton_Click(object sender, EventArgs e)
-        {
+            // Setiap kali teks di kotak pencarian berubah, panggil metode utama untuk memperbarui tabel.
             LoadAllItems();
-        }
-
-        private void languageToggle_CheckedChanged(object sender, EventArgs e)
-        {
-            // Ambil instance LangManager untuk kemudahan
-            var langManager = LoginService.Instance.LangManager;
-
-            // Periksa status toggle
-            if (languageToggle.Checked)
-            {
-                // Jika ON, ganti bahasa ke Inggris
-                langManager.LoadLanguage("EN");
-            }
-            else
-            {
-                // Jika OFF, ganti bahasa ke Indonesia
-                langManager.LoadLanguage("ID");
-            }
-
-            // Setelah bahasa diganti, panggil metode untuk memperbarui semua teks di UI
-            UpdateUITexts();
         }
     }
 }

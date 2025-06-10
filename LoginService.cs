@@ -140,13 +140,18 @@ namespace clo4konstruksi
         {
             IEnumerable<Item> result = items;
 
-            // 1. Proses Filter
-            if (config.Kategori != null && config.Kategori != "(Semua)")
+            // --- BAGIAN YANG DIPERBAIKI ---
+            // 1. Ambil dulu teks "(Semua)" dari LanguageManager sesuai bahasa aktif
+            string allFilterText = this.LangManager.Get("AllFilter");
+
+            // 2. Proses Filter dengan membandingkan dengan teks yang sudah diterjemahkan
+            if (config.Kategori != null && config.Kategori != allFilterText)
             {
                 result = result.Where(item => item.Category == config.Kategori);
             }
+            // --- AKHIR BAGIAN YANG DIPERBAIKI ---
 
-            // 2. Proses Sorting
+            // 3. Proses Sorting (bagian ini sudah benar, tidak perlu diubah)
             switch (config.UrutkanBerdasarkan)
             {
                 case "Nama":
@@ -158,6 +163,7 @@ namespace clo4konstruksi
                 case "Quantity":
                     result = config.Naik ? result.OrderBy(item => item.Quantity) : result.OrderByDescending(item => item.Quantity);
                     break;
+                    // TanggalMasuk sengaja saya hapus karena sepertinya Anda sudah menghapusnya dari ComboBox
             }
 
             return result.ToList();

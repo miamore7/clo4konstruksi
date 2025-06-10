@@ -26,12 +26,5 @@
     "Merk": "Apple",
     "Category": "Laptop",
     "Quantity": 3
-  },
-  {
-    "Id": "HP003",
-    "Name": "tipe",
-    "Merk": "merk",
-    "Category": "HP",
-    "Quantity": 113
   }
 ]
