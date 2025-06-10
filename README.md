@@ -11,6 +11,8 @@
 - **IDE**: Visual Studio 2022
 - **Design Pattern**: 
 - **Version Control**: GitHub
+- **NuGet**: MetroModernUI
+-            System.Text.Json
 
 ---
 
