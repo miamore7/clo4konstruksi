@@ -34,10 +34,10 @@ namespace clo4konstruksi
                 filterKategoriComboBox.Items[0] = lang.Get("AllFilter");
             }
 
-            // --- BAGIAN BARU UNTUK TAB BARANG MASUK ---
+            // --- BAGIAN YANG DIPERBAIKI UNTUK TAB BARANG MASUK ---
             inboundTitleLabel.Text = lang.Get("InboundGoodsTitle");
-            idBarangLabel.Text = lang.Get("ItemIDLabel");
-            merkLabel.Text = lang.Get("BrandLabel");
+            // idBarangLabel.Text dihapus dari sini
+            TipeBarangLabel.Text = lang.Get("BrandLabel"); // Menggunakan nama baru untuk label Merk
             jumlahLabel.Text = lang.Get("QuantityLabel");
             jenisLabel.Text = lang.Get("CategoryLabel");
             tambahBarangButton.Text = lang.Get("AddItemButton");

@@ -158,9 +158,6 @@ namespace clo4konstruksi
                 case "Quantity":
                     result = config.Naik ? result.OrderBy(item => item.Quantity) : result.OrderByDescending(item => item.Quantity);
                     break;
-                case "TanggalMasuk":
-                    result = config.Naik ? result.OrderBy(item => item.TanggalMasuk) : result.OrderByDescending(item => item.TanggalMasuk);
-                    break;
             }
 
             return result.ToList();

@@ -7,7 +7,4 @@ public class Item
     public string Merk { get; set; }
     public string Category { get; set; }
     public int Quantity { get; set; }
-
-    // TAMBAHKAN PROPERTI INI
-    public DateTime TanggalMasuk { get; set; }
 }

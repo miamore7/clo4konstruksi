@@ -43,7 +43,7 @@
             this.jenisLabel = new MetroFramework.Controls.MetroLabel();
             this.jumlahLabel = new MetroFramework.Controls.MetroLabel();
             this.merkLabel = new MetroFramework.Controls.MetroLabel();
-            this.idBarangLabel = new MetroFramework.Controls.MetroLabel();
+            this.TipeBarangLabel = new MetroFramework.Controls.MetroLabel();
             this.inboundTitleLabel = new MetroFramework.Controls.MetroLabel();
             this.tambahBarangButton = new MetroFramework.Controls.MetroButton();
             this.kategoriComboBox = new MetroFramework.Controls.MetroComboBox();
@@ -86,7 +86,7 @@
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(20, 60);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(760, 370);
             this.metroTabControl1.TabIndex = 1;
             this.metroTabControl1.UseSelectable = true;
@@ -140,8 +140,7 @@
             this.sortByComboBox.Items.AddRange(new object[] {
             "Nama",
             "Merk",
-            "Quantity",
-            "TanggalMasuk"});
+            "Quantity"});
             this.sortByComboBox.Location = new System.Drawing.Point(353, 235);
             this.sortByComboBox.Name = "sortByComboBox";
             this.sortByComboBox.Size = new System.Drawing.Size(121, 29);
@@ -207,7 +206,7 @@
             this.gudangTabPage.Controls.Add(this.jenisLabel);
             this.gudangTabPage.Controls.Add(this.jumlahLabel);
             this.gudangTabPage.Controls.Add(this.merkLabel);
-            this.gudangTabPage.Controls.Add(this.idBarangLabel);
+            this.gudangTabPage.Controls.Add(this.TipeBarangLabel);
             this.gudangTabPage.Controls.Add(this.inboundTitleLabel);
             this.gudangTabPage.Controls.Add(this.tambahBarangButton);
             this.gudangTabPage.Controls.Add(this.kategoriComboBox);
@@ -247,20 +246,20 @@
             // merkLabel
             // 
             this.merkLabel.AutoSize = true;
-            this.merkLabel.Location = new System.Drawing.Point(197, 119);
+            this.merkLabel.Location = new System.Drawing.Point(226, 78);
             this.merkLabel.Name = "merkLabel";
-            this.merkLabel.Size = new System.Drawing.Size(71, 19);
+            this.merkLabel.Size = new System.Drawing.Size(42, 19);
             this.merkLabel.TabIndex = 10;
-            this.merkLabel.Text = "Tipe Merk:";
+            this.merkLabel.Text = "Merk:";
             // 
-            // idBarangLabel
+            // TipeBarangLabel
             // 
-            this.idBarangLabel.AutoSize = true;
-            this.idBarangLabel.Location = new System.Drawing.Point(205, 78);
-            this.idBarangLabel.Name = "idBarangLabel";
-            this.idBarangLabel.Size = new System.Drawing.Size(70, 19);
-            this.idBarangLabel.TabIndex = 9;
-            this.idBarangLabel.Text = "ID Barang:";
+            this.TipeBarangLabel.AutoSize = true;
+            this.TipeBarangLabel.Location = new System.Drawing.Point(226, 113);
+            this.TipeBarangLabel.Name = "TipeBarangLabel";
+            this.TipeBarangLabel.Size = new System.Drawing.Size(37, 19);
+            this.TipeBarangLabel.TabIndex = 9;
+            this.TipeBarangLabel.Text = "Tipe:";
             // 
             // inboundTitleLabel
             // 
@@ -314,7 +313,6 @@
             this.jumlahBarangTextBox.MaxLength = 32767;
             this.jumlahBarangTextBox.Name = "jumlahBarangTextBox";
             this.jumlahBarangTextBox.PasswordChar = '\0';
-            this.jumlahBarangTextBox.PromptText = "Jumlah";
             this.jumlahBarangTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.jumlahBarangTextBox.SelectedText = "";
             this.jumlahBarangTextBox.SelectionLength = 0;
@@ -323,7 +321,6 @@
             this.jumlahBarangTextBox.Size = new System.Drawing.Size(169, 25);
             this.jumlahBarangTextBox.TabIndex = 5;
             this.jumlahBarangTextBox.UseSelectable = true;
-            this.jumlahBarangTextBox.WaterMark = "Jumlah";
             this.jumlahBarangTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.jumlahBarangTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -346,7 +343,6 @@
             this.merkTextBox.MaxLength = 32767;
             this.merkTextBox.Name = "merkTextBox";
             this.merkTextBox.PasswordChar = '\0';
-            this.merkTextBox.PromptText = "Merk HP/Laptop";
             this.merkTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.merkTextBox.SelectedText = "";
             this.merkTextBox.SelectionLength = 0;
@@ -355,7 +351,6 @@
             this.merkTextBox.Size = new System.Drawing.Size(169, 25);
             this.merkTextBox.TabIndex = 4;
             this.merkTextBox.UseSelectable = true;
-            this.merkTextBox.WaterMark = "Merk HP/Laptop";
             this.merkTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.merkTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -374,11 +369,10 @@
             this.namaBarangTextBox.CustomButton.UseSelectable = true;
             this.namaBarangTextBox.CustomButton.Visible = false;
             this.namaBarangTextBox.Lines = new string[0];
-            this.namaBarangTextBox.Location = new System.Drawing.Point(292, 119);
+            this.namaBarangTextBox.Location = new System.Drawing.Point(292, 113);
             this.namaBarangTextBox.MaxLength = 32767;
             this.namaBarangTextBox.Name = "namaBarangTextBox";
             this.namaBarangTextBox.PasswordChar = '\0';
-            this.namaBarangTextBox.PromptText = "Tipe Merk";
             this.namaBarangTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.namaBarangTextBox.SelectedText = "";
             this.namaBarangTextBox.SelectionLength = 0;
@@ -387,7 +381,6 @@
             this.namaBarangTextBox.Size = new System.Drawing.Size(169, 25);
             this.namaBarangTextBox.TabIndex = 3;
             this.namaBarangTextBox.UseSelectable = true;
-            this.namaBarangTextBox.WaterMark = "Tipe Merk";
             this.namaBarangTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.namaBarangTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -606,7 +599,7 @@
         private MetroFramework.Controls.MetroLabel jenisLabel;
         private MetroFramework.Controls.MetroLabel jumlahLabel;
         private MetroFramework.Controls.MetroLabel merkLabel;
-        private MetroFramework.Controls.MetroLabel idBarangLabel;
+        private MetroFramework.Controls.MetroLabel TipeBarangLabel;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroToggle languageToggle;
         private MetroFramework.Controls.MetroLabel languageLabel;
