@@ -1,8 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\",
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\Documents\\Semester 6\\Konstruksi Perangkat Lunak\\UAS\\clo4konstruksi\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\maindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:maindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -37,16 +38,45 @@
     {
       "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|e:\\kuliah\\semester6\\konstruksi-perangkat-lunak\\clo4konstruksi\\maindashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:maindashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|C:\\Users\\ASUS\\Documents\\Semester 6\\Konstruksi Perangkat Lunak\\UAS\\clo4konstruksi\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|c:\\users\\asus\\documents\\semester 6\\konstruksi perangkat lunak\\uas\\clo4konstruksi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|c:\\users\\asus\\documents\\semester 6\\konstruksi perangkat lunak\\uas\\clo4konstruksi\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|c:\\users\\asus\\documents\\semester 6\\konstruksi perangkat lunak\\uas\\clo4konstruksi\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|C:\\Users\\ASUS\\Documents\\Semester 6\\Konstruksi Perangkat Lunak\\UAS\\clo4konstruksi\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|C:\\Users\\ASUS\\Documents\\Semester 6\\Konstruksi Perangkat Lunak\\UAS\\clo4konstruksi\\data\\databarang.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2C688849-0B84-4F44-B87B-6368BD540E4E}|clo4konstruksi.csproj|solutionrelative:data\\databarang.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+>>>>>>> Euangelion
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 256,
+      "VerticalTabListWidth": 132,
       "DocumentGroups": [
         {
+<<<<<<< HEAD
           "DockedWidth": 23,
           "SelectedChildIndex": 9,
+=======
+          "DockedWidth": 1651,
+          "SelectedChildIndex": 4,
+>>>>>>> Euangelion
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,6 +84,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 8,
               "Title": "MainDashboard.Designer.cs",
               "DocumentMoniker": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\MainDashboard.Designer.cs",
@@ -61,12 +92,59 @@
               "ToolTip": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\MainDashboard.Designer.cs",
               "RelativeToolTip": "MainDashboard.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+=======
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Semester 6\\Konstruksi Perangkat Lunak\\UAS\\clo4konstruksi\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Semester 6\\Konstruksi Perangkat Lunak\\UAS\\clo4konstruksi\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T07:12:37.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Semester 6\\Konstruksi Perangkat Lunak\\UAS\\clo4konstruksi\\User.cs",
+              "RelativeDocumentMoniker": "User.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Semester 6\\Konstruksi Perangkat Lunak\\UAS\\clo4konstruksi\\User.cs",
+              "RelativeToolTip": "User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T07:11:56.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Semester 6\\Konstruksi Perangkat Lunak\\UAS\\clo4konstruksi\\LoginForm.cs",
+              "RelativeDocumentMoniker": "LoginForm.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Semester 6\\Konstruksi Perangkat Lunak\\UAS\\clo4konstruksi\\LoginForm.cs [Design]",
+              "RelativeToolTip": "LoginForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T07:25:19.182Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Semester 6\\Konstruksi Perangkat Lunak\\UAS\\clo4konstruksi\\LoginService.cs",
+              "RelativeDocumentMoniker": "LoginService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Semester 6\\Konstruksi Perangkat Lunak\\UAS\\clo4konstruksi\\LoginService.cs",
+              "RelativeToolTip": "LoginService.cs",
+              "ViewState": "AgIAAE8BAAAAAAAAAAAqwFsBAAAcAAAAAAAAAA==",
+>>>>>>> Euangelion
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-10T12:47:15.601Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 2,
               "Title": "TransaksiBarangForm.cs",
               "DocumentMoniker": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\TransaksiBarangForm.cs",
@@ -77,6 +155,17 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-10T12:31:58.059Z",
               "EditorCaption": ""
+=======
+              "DocumentIndex": 5,
+              "Title": "DataBarang.json",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Semester 6\\Konstruksi Perangkat Lunak\\UAS\\clo4konstruksi\\Data\\DataBarang.json",
+              "RelativeDocumentMoniker": "Data\\DataBarang.json",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Semester 6\\Konstruksi Perangkat Lunak\\UAS\\clo4konstruksi\\Data\\DataBarang.json",
+              "RelativeToolTip": "Data\\DataBarang.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-10T06:39:41.407Z"
+>>>>>>> Euangelion
             },
             {
               "$type": "Document",
@@ -94,14 +183,15 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Item.cs",
-              "DocumentMoniker": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\Item.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Semester 6\\Konstruksi Perangkat Lunak\\UAS\\clo4konstruksi\\Item.cs",
               "RelativeDocumentMoniker": "Item.cs",
-              "ToolTip": "E:\\Kuliah\\Semester6\\KONSTRUKSI-PERANGKAT-LUNAK\\clo4konstruksi\\Item.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Semester 6\\Konstruksi Perangkat Lunak\\UAS\\clo4konstruksi\\Item.cs",
               "RelativeToolTip": "Item.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-10T06:39:32.517Z",
               "EditorCaption": ""
+<<<<<<< HEAD
             },
             {
               "$type": "Document",
@@ -166,6 +256,8 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-10T06:04:18.12Z",
               "EditorCaption": " [Design]"
+=======
+>>>>>>> Euangelion
             }
           ]
         },
@@ -188,13 +280,9 @@
           ]
         },
         {
-          "DockedWidth": 1677,
+          "DockedWidth": 49,
           "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -206,6 +294,10 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{6d4078d1-5951-4ed1-ac0e-0a8099c1cce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             }
           ]
         }

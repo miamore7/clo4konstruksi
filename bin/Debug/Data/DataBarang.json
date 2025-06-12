@@ -26,5 +26,22 @@
     "Merk": "Apple",
     "Category": "Laptop",
     "Quantity": 3
+<<<<<<< HEAD
+=======
+  },
+  {
+    "Id": "HP003",
+    "Name": "tipe",
+    "Merk": "merk",
+    "Category": "HP",
+    "Quantity": 113
+  },
+  {
+    "Id": "LP003",
+    "Name": "Vivoboook",
+    "Merk": "Asus",
+    "Category": "Laptop",
+    "Quantity": 11
+>>>>>>> Euangelion
   }
 ]
