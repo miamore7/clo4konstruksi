@@ -18,7 +18,7 @@
 ## 📋 Anggota Kelompok & Tanggung Jawab
 | Nama                        | NIM         | Fitur yang Dikembangkan                  |
 |-----------------------------|-------------|------------------------------------------|
-|                             | 1201220000  |                                          |
+| Muhammad Ageng Sasmito      | 1201220001  | Manajemen Barang Keluar & Multi-Bahasa   |
 |                             | 1201220000  |                                          |
 |                             | 1201220000  |                                          |
 |                             | 1201220000  |                                          |
