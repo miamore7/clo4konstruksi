@@ -4,7 +4,7 @@
     "Name": "Galaxy S21",
     "Merk": "Samsung",
     "Category": "HP",
-    "Quantity": 10
+    "Quantity": 75
   },
   {
     "Id": "HP002",
@@ -26,5 +26,12 @@
     "Merk": "Apple",
     "Category": "Laptop",
     "Quantity": 3
+  },
+  {
+    "Id": "HP003",
+    "Name": "note 10",
+    "Merk": "xiaomi",
+    "Category": "HP",
+    "Quantity": 6
   }
 ]
