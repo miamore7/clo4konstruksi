@@ -201,7 +201,6 @@
             this.searchTextBox.MaxLength = 32767;
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.PasswordChar = '\0';
-            this.searchTextBox.PromptText = "Cari berdasarkan Nama atau Merk...";
             this.searchTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.searchTextBox.SelectedText = "";
             this.searchTextBox.SelectionLength = 0;
