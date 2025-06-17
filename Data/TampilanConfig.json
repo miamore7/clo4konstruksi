@@ -1,5 +1,5 @@
 {
-    "Kategori": "(Semua)",
-    "UrutkanBerdasarkan": "Nama",
+    "Kategori": "*",
+    "UrutkanBerdasarkan": "Name",
     "Naik": true
 }

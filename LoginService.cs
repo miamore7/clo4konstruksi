@@ -27,11 +27,12 @@ namespace clo4konstruksi
         {
             LoadUsers();
             LoadItems();
-            LoadViewConfig();
+            LoadViewConfig(); // Memanggil ini untuk memastikan ViewConfig tidak null
+
             InvManager = new InventoryManager(this.items, this._capacities);
             LangManager = new LanguageManager();
             LangManager.LoadLanguage("ID");
-            BarangKeluarMgr = new BarangKeluarManager();
+            BarangKeluarMgr = new BarangKeluarManager("Data/BarangKeluarConfig.json");
         }
 
         public static LoginService Instance
@@ -46,6 +47,7 @@ namespace clo4konstruksi
             }
         }
 
+        #region Metode Load/Save Data
         private void LoadUsers()
         {
             if (File.Exists(_userFilePath))
@@ -78,6 +80,27 @@ namespace clo4konstruksi
             File.WriteAllText(_itemFilePath, json);
         }
 
+        private void LoadViewConfig()
+        {
+            if (File.Exists(_viewConfigPath))
+            {
+                string json = File.ReadAllText(_viewConfigPath);
+                ViewConfig = JsonSerializer.Deserialize<FilterSortConfig>(json) ?? new FilterSortConfig();
+            }
+            else
+            {
+                ViewConfig = new FilterSortConfig { Kategori = "(Semua)", UrutkanBerdasarkan = "Nama", Naik = true };
+            }
+        }
+
+        public void SaveViewConfig()
+        {
+            string json = JsonSerializer.Serialize(ViewConfig, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(_viewConfigPath, json);
+        }
+        #endregion
+
+        #region Metode Fungsionalitas Aplikasi
         public bool Login(string username, string password)
         {
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password)) return false;
@@ -96,65 +119,18 @@ namespace clo4konstruksi
             CurrentLoginState = LoginState.LoggedOut;
         }
 
-        public List<Item> GetItems() => items;
-        public List<User> GetAllUsers() => users.Where(u => u.Role != "SuperAdmin").ToList();
-        public void SetUserStatus(string username, bool isActive)
-        {
-            var userToUpdate = users.FirstOrDefault(u => u.Username == username);
-            if (userToUpdate != null)
-            {
-                userToUpdate.IsActive = isActive;
-                SaveUsers();
-            }
-        }
-
-        public void CreateAdmin(string username, string password)
-        {
-            if (users.Any(u => u.Username.Equals(username, StringComparison.OrdinalIgnoreCase)))
-            {
-                throw new InvalidOperationException("Username sudah digunakan.");
-            }
-
-            var newUser = new User
-            {
-                Username = username,
-                Password = password, // Ingat, kita masih pakai plain text
-                Role = "admin",
-                IsActive = true
-            };
-            users.Add(newUser);
-            SaveUsers();
-        }
-
-        public void DeleteUser(string username)
-        {
-            var userToRemove = users.FirstOrDefault(u => u.Username.Equals(username, StringComparison.OrdinalIgnoreCase));
-            if (userToRemove != null)
-            {
-                users.Remove(userToRemove);
-                SaveUsers();
-            }
-        }
-
         public List<Item> GetFilteredAndSortedItems(FilterSortConfig config)
         {
             IEnumerable<Item> result = items;
-
-            // --- BAGIAN YANG DIPERBAIKI ---
-            // 1. Ambil dulu teks "(Semua)" dari LanguageManager sesuai bahasa aktif
             string allFilterText = this.LangManager.Get("AllFilter");
-
-            // 2. Proses Filter dengan membandingkan dengan teks yang sudah diterjemahkan
-            if (config.Kategori != null && config.Kategori != allFilterText)
+            if (config.Kategori != null && config.Kategori != "*")
             {
                 result = result.Where(item => item.Category == config.Kategori);
             }
-            // --- AKHIR BAGIAN YANG DIPERBAIKI ---
-
-            // 3. Proses Sorting (bagian ini sudah benar, tidak perlu diubah)
+            // Di dalam metode GetFilteredAndSortedItems
             switch (config.UrutkanBerdasarkan)
             {
-                case "Nama":
+                case "Name":
                     result = config.Naik ? result.OrderBy(item => item.Name) : result.OrderByDescending(item => item.Name);
                     break;
                 case "Merk":
@@ -163,32 +139,43 @@ namespace clo4konstruksi
                 case "Quantity":
                     result = config.Naik ? result.OrderBy(item => item.Quantity) : result.OrderByDescending(item => item.Quantity);
                     break;
-                    // TanggalMasuk sengaja saya hapus karena sepertinya Anda sudah menghapusnya dari ComboBox
+                case "TanggalMasuk":
+                    result = config.Naik ? result.OrderBy(item => item.TanggalMasuk) : result.OrderByDescending(item => item.TanggalMasuk);
+                    break;
             }
-
             return result.ToList();
         }
 
-        private void LoadViewConfig()
+        public List<Item> GetItems() => items;
+        public List<User> GetAllUsers() => users.Where(u => u.Role != "SuperAdmin").ToList();
+
+        public void SetUserStatus(string username, bool isActive)
         {
-            // Pengecekan untuk memastikan file ada sebelum dibaca
-            if (File.Exists(_viewConfigPath))
-            {
-                string json = File.ReadAllText(_viewConfigPath);
-                ViewConfig = JsonSerializer.Deserialize<FilterSortConfig>(json) ?? new FilterSortConfig();
-            }
-            else
-            {
-                // Jika file tidak ada, buat konfigurasi default
-                ViewConfig = new FilterSortConfig { Kategori = "(Semua)", UrutkanBerdasarkan = "Nama", Naik = true };
-            }
+            var userToUpdate = users.FirstOrDefault(u => u.Username == username);
+            if (userToUpdate != null) { userToUpdate.IsActive = isActive; SaveUsers(); }
         }
 
-        public void SaveViewConfig()
+        public void CreateAdmin(string username, string password)
         {
-            string json = JsonSerializer.Serialize(ViewConfig, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(_viewConfigPath, json);
+            if (users.Any(u => u.Username.Equals(username, StringComparison.OrdinalIgnoreCase))) { throw new InvalidOperationException("Username sudah digunakan."); }
+            var newUser = new User { Username = username, Password = password, Role = "admin", IsActive = true };
+            users.Add(newUser);
+            SaveUsers();
+        }
+
+        public void DeleteUser(string username)
+        {
+            var userToRemove = users.FirstOrDefault(u => u.Username.Equals(username, StringComparison.OrdinalIgnoreCase));
+            if (userToRemove != null) { users.Remove(userToRemove); SaveUsers(); }
+        }
+        #endregion
+
+        public void RemoveItemIfOutOfStock(Item item)
+        {
+            if (item.Quantity <= 0)
+            {
+                items.Remove(item);
+            }
         }
     }
 }
-

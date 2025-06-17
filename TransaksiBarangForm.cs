@@ -10,27 +10,6 @@ namespace clo4konstruksi
         private LoginService _loginService;
         private Form _loginForm;
 
-        private void UpdateUITexts()
-        {
-            var lang = LoginService.Instance.LangManager;
-
-            // --- Tombol Utama ---
-            kembaliButton.Text = lang.Get("BackButton");
-
-            // --- Judul Tab ---
-            barangMasukTabPage.Text = lang.Get("TabInbound");
-            barangKeluarTabPage.Text = lang.Get("TabOutbound");
-
-            // --- Kontrol di Tab Barang Masuk ---
-            // (Ganti nama-nama label ini jika berbeda di desainer Anda)
-            // inboundTitleLabel.Text = lang.Get("InboundGoodsTitle"); 
-            tambahBarangButton.Text = lang.Get("AddItemButton");
-
-            // --- Kontrol di Tab Barang Keluar ---
-            jumlahKeluarLabel.Text = lang.Get("InputJumlah");
-            keluarkanButton.Text = lang.Get("IssueItemButton");
-        }
-
         public TransaksiBarangForm(Form loginForm)
         {
             InitializeComponent();
@@ -40,15 +19,13 @@ namespace clo4konstruksi
 
         private void TransaksiBarangForm_Load(object sender, EventArgs e)
         {
-            // Saat form dibuka, langsung muat data barang ke tabel
+            // Muat data awal dan atur semua teks ke bahasa yang sesuai
             LoadAllItems();
             UpdateUITexts();
-
-            // Panggil ini untuk mengatur teks awal pada label informasi
-            itemsDataGridView_SelectionChanged(null, null);
+            itemsDataGridView_SelectionChanged(null, null); // Atur teks awal label info
         }
 
-        // --- Logika Umum & Navigasi ---
+        #region Navigasi & Pencarian
         private void kembaliButton_Click(object sender, EventArgs e)
         {
             MainDashboard dashboard = new MainDashboard(_loginForm);
@@ -56,43 +33,61 @@ namespace clo4konstruksi
             this.Close();
         }
 
-        // Di dalam file TransaksiBarangForm.cs
+        private void searchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            LoadAllItems();
+        }
+
+        private void itemsDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            var lang = LoginService.Instance.LangManager;
+            if (itemsDataGridView.CurrentRow != null && itemsDataGridView.CurrentRow.DataBoundItem is Item selectedItem)
+            {
+                selectionInfoLabel.Text = lang.Format("SelectedItemInfo", selectedItem.Merk, selectedItem.Name, selectedItem.Quantity);
+            }
+            else
+            {
+                selectionInfoLabel.Text = lang.Get("NoItemSelected");
+            }
+        }
+        #endregion
+
+        #region Logika Utama
         private void LoadAllItems()
         {
-            // 1. Ambil semua item dari service
             List<Item> allItems = _loginService.GetItems();
-
-            // 2. Ambil teks pencarian dari searchTextBox
             string searchTerm = searchTextBox.Text.ToLower().Trim();
-
-            // 3. Lakukan pencarian jika ada input
             List<Item> finalResult;
+
             if (string.IsNullOrWhiteSpace(searchTerm))
             {
-                // Jika kotak pencarian kosong, tampilkan semua item
                 finalResult = allItems;
             }
             else
             {
-                // Jika ada teks pencarian, filter item
                 finalResult = allItems.Where(item =>
                     item.Name.ToLower().Contains(searchTerm) ||
                     item.Merk.ToLower().Contains(searchTerm)
                 ).ToList();
             }
 
-            // 4. Tampilkan hasil akhir ke tabel
             itemsDataGridView.DataSource = null;
             itemsDataGridView.DataSource = finalResult;
         }
 
-        // --- Logika untuk Tab Barang Masuk ---
         private void tambahBarangButton_Click(object sender, EventArgs e)
         {
-            // (Ini adalah kode yang sama dari MainDashboard sebelumnya)
             if (string.IsNullOrWhiteSpace(namaBarangTextBox.Text) || string.IsNullOrWhiteSpace(merkTextBox.Text) || string.IsNullOrWhiteSpace(jumlahBarangTextBox.Text) || kategoriComboBox.SelectedItem == null) { MessageBox.Show("Semua kolom harus diisi."); return; }
             if (!int.TryParse(jumlahBarangTextBox.Text, out int jumlah) || jumlah <= 0) { MessageBox.Show("Jumlah harus angka positif."); return; }
-            var newItem = new Item { Name = namaBarangTextBox.Text, Merk = merkTextBox.Text, Category = kategoriComboBox.SelectedItem.ToString(), Quantity = jumlah };
+            var newItem = new Item
+            {
+                Name = namaBarangTextBox.Text,
+                Merk = merkTextBox.Text,
+                Category = kategoriComboBox.SelectedItem.ToString(),
+                Quantity = jumlah,
+                TanggalMasuk = DateTime.Now
+            };
+
             if (LoginService.Instance.InvManager.CanAddItem(newItem, out string errorMessage))
             {
                 LoginService.Instance.InvManager.AddItem(newItem);
@@ -104,72 +99,70 @@ namespace clo4konstruksi
             else { MessageBox.Show(errorMessage, "Kapasitas Penuh"); }
         }
 
-        // --- Logika untuk Tab Barang Keluar ---
         private void keluarkanButton_Click(object sender, EventArgs e)
         {
             var lang = LoginService.Instance.LangManager;
-
-            // 1. Pastikan ada baris yang dipilih di tabel
-            if (itemsDataGridView.CurrentRow == null)
-            {
-                MessageBox.Show("Silakan pilih barang di tabel terlebih dahulu.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
+            if (itemsDataGridView.CurrentRow == null) { MessageBox.Show("Silakan pilih barang di tabel terlebih dahulu."); return; }
             try
             {
-                // Ambil objek 'Item' dari baris yang dipilih
                 Item selectedItem = itemsDataGridView.CurrentRow.DataBoundItem as Item;
                 if (selectedItem == null) return;
 
-                // Validasi jumlah yang akan dikeluarkan
                 if (!int.TryParse(jumlahKeluarTextBox.Text, out int jumlah) || jumlah <= 0)
                 {
                     throw new ArgumentException(lang.Get("Error_JumlahInvalid"));
                 }
 
-                // Proses pengeluaran barang menggunakan item yang sudah dipilih
                 int stokLama = selectedItem.Quantity;
+                // Kurangi stok barang
                 LoginService.Instance.BarangKeluarMgr.KeluarkanBarang(selectedItem, jumlah);
 
-                // Simpan dan update UI
-                LoginService.Instance.SaveItems();
-                LoadAllItems();
+                // -- BAGIAN PERBAIKAN --
+                // Periksa apakah stok barang menjadi 0, jika ya, hapus dari daftar
+                LoginService.Instance.RemoveItemIfOutOfStock(selectedItem);
+                // -- AKHIR PERBAIKAN --
 
-                // Menggunakan 'selectedItem' dan 'LogPrefix' yang benar
+                // Simpan perubahan ke file (bisa jadi pengurangan stok atau penghapusan item)
+                LoginService.Instance.SaveItems();
+
+                // Muat ulang semua tampilan
+                LoadAllItems();
                 logKeluarLabel.Text = $"{lang.Get("LogPrefix")} {lang.Format("SuccessMessage", jumlah, selectedItem.Name, stokLama, selectedItem.Quantity)}";
             }
             catch (Exception ex)
             {
-                // Menggunakan 'LogPrefix' yang benar
                 logKeluarLabel.Text = $"{lang.Get("LogPrefix")} {lang.Get("Error_General")} {ex.Message}";
             }
-            finally
-            {
-                // Hanya kosongkan input jumlah
-                jumlahKeluarTextBox.Clear();
-            }
+            finally { jumlahKeluarTextBox.Clear(); }
         }
+        #endregion
 
-        private void searchTextBox_TextChanged(object sender, EventArgs e)
-        {
-            // Setiap kali teks berubah, panggil LoadAllItems untuk memfilter tabel
-            LoadAllItems();
-        }
-
-        private void itemsDataGridView_SelectionChanged(object sender, EventArgs e)
+        #region UI Helper
+        private void UpdateUITexts()
         {
             var lang = LoginService.Instance.LangManager;
 
-            if (itemsDataGridView.CurrentRow != null && itemsDataGridView.CurrentRow.DataBoundItem is Item selectedItem)
-            {
-                // PERUBAHAN DI SINI: Memberikan selectedItem.Merk sebagai parameter pertama
-                selectionInfoLabel.Text = lang.Format("SelectedItemInfo", selectedItem.Merk, selectedItem.Name, selectedItem.Quantity);
-            }
-            else
-            {
-                selectionInfoLabel.Text = lang.Get("NoItemSelected");
-            }
+            kembaliButton.Text = lang.Get("BackButton");
+
+            barangMasukTabPage.Text = lang.Get("TabInbound");
+            barangKeluarTabPage.Text = lang.Get("TabOutbound");
+
+            // Tab Barang Masuk
+            if (inboundTitleLabel != null) inboundTitleLabel.Text = lang.Get("InboundGoodsTitle");
+            if (TipeBarangLabel != null) TipeBarangLabel.Text = lang.Get("SortByName");
+            if (merkLabel != null) merkLabel.Text = lang.Get("SortByBrand");
+            if (jumlahLabel != null) jumlahLabel.Text = lang.Get("QuantityLabel");
+            if (jenisLabel != null) jenisLabel.Text = lang.Get("CategoryLabel");
+            tambahBarangButton.Text = lang.Get("AddItemButton");
+            searchTextBox.WaterMark = lang.Get("SearchPrompt");
+
+            // Tab Barang Keluar
+            if (outboundTitleLabel != null) outboundTitleLabel.Text = lang.Get("OutboundTitle");
+            if (jumlahKeluarLabel != null) jumlahKeluarLabel.Text = lang.Get("InputJumlah");
+            keluarkanButton.Text = lang.Get("IssueItemButton");
+            if (logKeluarLabel != null) logKeluarLabel.Text = lang.Get("LogPrefix");
+            if (selectionInfoLabel != null) selectionInfoLabel.Text = lang.Get("NoItemSelected");
         }
+        #endregion
     }
 }

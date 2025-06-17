@@ -119,6 +119,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SortOption.cs" />
     <Compile Include="TransaksiBarangForm.cs">
       <SubType>Form</SubType>
     </Compile>

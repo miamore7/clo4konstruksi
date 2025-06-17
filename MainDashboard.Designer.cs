@@ -110,9 +110,10 @@
             this.sortByComboBox.FormattingEnabled = true;
             this.sortByComboBox.ItemHeight = 23;
             this.sortByComboBox.Items.AddRange(new object[] {
-            "Nama",
+            "Name",
             "Merk",
-            "Quantity"});
+            "Quantity",
+            "TanggalMasuk"});
             this.sortByComboBox.Location = new System.Drawing.Point(391, 336);
             this.sortByComboBox.Name = "sortByComboBox";
             this.sortByComboBox.Size = new System.Drawing.Size(121, 29);
@@ -201,6 +202,7 @@
             this.searchTextBox.MaxLength = 32767;
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.PasswordChar = '\0';
+            this.searchTextBox.PromptText = "Cari berdasarkan Nama atau Merk...";
             this.searchTextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.searchTextBox.SelectedText = "";
             this.searchTextBox.SelectionLength = 0;
