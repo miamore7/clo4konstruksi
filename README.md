@@ -9,7 +9,7 @@
 - **Bahasa Pemrograman**: C#
 - **Framework**: .NET Framework 4.8
 - **IDE**: Visual Studio 2022
-- **Design Pattern**: 
+- **Design Pattern**: Singleton Pattern, State Machine Pattern, Configuration-Driven Design, Table-Driven Method, Internationalization
 - **Version Control**: GitHub
 
 ---
