@@ -19,7 +19,7 @@
 | Nama                        | NIM         | Fitur yang Dikembangkan                  |
 |-----------------------------|-------------|------------------------------------------|
 | Muhammad Ageng Sasmito      | 1201220001  | Manajemen Barang Keluar & Multi-Bahasa   |
-|                             | 1201220000  |                                          |
+| Enjina Disellyn             | 1201220014  | Sistem Login dan Manajemen Akun          |
 |                             | 1201220000  |                                          |
 |                             | 1201220000  |                                          |
 
