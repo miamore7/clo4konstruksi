@@ -17,10 +17,9 @@
 ## 📋 Anggota Kelompok & Tanggung Jawab
 | Nama                        | NIM         | Fitur yang Dikembangkan                  |
 |-----------------------------|-------------|------------------------------------------|
-| Muhammad Ageng Sasmito      | 1201220001  | Barang Keluar, Managemen Akun            |
-| Enjina Disellyn             | 1201220014  | Sistem Login dan Manajemen Akun
-| Farrel Gilang N.M.          | 1201220022  | Sorting                                  |
-| Euangelion Michael Didimus  | 1201220029  | Barang Masuk                             |
-
+| Muhammad Ageng Sasmito      | 1201220001  | Manajemen Barang Keluar & Multi-Bahasa   |
+| Enjina Disellyn             | 1201220014  | Sistem Login dan Manajemen Akun          |
+| Euangelion M Didimus        | 1201220029  | Manajemen Barang Masuk                   |
+| Farrel Gilang N.M.          | 1201220022  | Filter dan sorting barang                |
 
 ---
