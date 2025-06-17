@@ -41,7 +41,8 @@
             this.merkTextBox = new MetroFramework.Controls.MetroTextBox();
             this.namaBarangTextBox = new MetroFramework.Controls.MetroTextBox();
             this.barangKeluarTabPage = new MetroFramework.Controls.MetroTabPage();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.selectionInfoLabel = new MetroFramework.Controls.MetroLabel();
+            this.outboundTitleLabel = new MetroFramework.Controls.MetroLabel();
             this.logKeluarLabel = new MetroFramework.Controls.MetroLabel();
             this.keluarkanButton = new MetroFramework.Controls.MetroButton();
             this.jumlahKeluarTextBox = new MetroFramework.Controls.MetroTextBox();
@@ -49,7 +50,6 @@
             this.itemsDataGridView = new System.Windows.Forms.DataGridView();
             this.kembaliButton = new MetroFramework.Controls.MetroButton();
             this.searchTextBox = new MetroFramework.Controls.MetroTextBox();
-            this.selectionInfoLabel = new MetroFramework.Controls.MetroLabel();
             this.metroTabControl1.SuspendLayout();
             this.barangMasukTabPage.SuspendLayout();
             this.barangKeluarTabPage.SuspendLayout();
@@ -63,7 +63,7 @@
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.metroTabControl1.Location = new System.Drawing.Point(20, 195);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(760, 235);
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.UseSelectable = true;
@@ -95,7 +95,7 @@
             // jenisLabel
             // 
             this.jenisLabel.AutoSize = true;
-            this.jenisLabel.Location = new System.Drawing.Point(418, 35);
+            this.jenisLabel.Location = new System.Drawing.Point(416, 35);
             this.jenisLabel.Name = "jenisLabel";
             this.jenisLabel.Size = new System.Drawing.Size(39, 19);
             this.jenisLabel.TabIndex = 22;
@@ -141,7 +141,7 @@
             // 
             // tambahBarangButton
             // 
-            this.tambahBarangButton.Location = new System.Drawing.Point(463, 72);
+            this.tambahBarangButton.Location = new System.Drawing.Point(487, 72);
             this.tambahBarangButton.Name = "tambahBarangButton";
             this.tambahBarangButton.Size = new System.Drawing.Size(121, 25);
             this.tambahBarangButton.TabIndex = 17;
@@ -156,7 +156,7 @@
             this.kategoriComboBox.Items.AddRange(new object[] {
             "HP",
             "Laptop"});
-            this.kategoriComboBox.Location = new System.Drawing.Point(463, 35);
+            this.kategoriComboBox.Location = new System.Drawing.Point(487, 35);
             this.kategoriComboBox.Name = "kategoriComboBox";
             this.kategoriComboBox.Size = new System.Drawing.Size(121, 29);
             this.kategoriComboBox.TabIndex = 16;
@@ -255,7 +255,7 @@
             // barangKeluarTabPage
             // 
             this.barangKeluarTabPage.Controls.Add(this.selectionInfoLabel);
-            this.barangKeluarTabPage.Controls.Add(this.metroLabel6);
+            this.barangKeluarTabPage.Controls.Add(this.outboundTitleLabel);
             this.barangKeluarTabPage.Controls.Add(this.logKeluarLabel);
             this.barangKeluarTabPage.Controls.Add(this.keluarkanButton);
             this.barangKeluarTabPage.Controls.Add(this.jumlahKeluarTextBox);
@@ -272,16 +272,25 @@
             this.barangKeluarTabPage.VerticalScrollbarHighlightOnWheel = false;
             this.barangKeluarTabPage.VerticalScrollbarSize = 10;
             // 
-            // metroLabel6
+            // selectionInfoLabel
             // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel6.Location = new System.Drawing.Point(3, 0);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(133, 25);
-            this.metroLabel6.TabIndex = 16;
-            this.metroLabel6.Text = "Barang Keluar";
+            this.selectionInfoLabel.AutoSize = true;
+            this.selectionInfoLabel.Location = new System.Drawing.Point(242, 35);
+            this.selectionInfoLabel.Name = "selectionInfoLabel";
+            this.selectionInfoLabel.Size = new System.Drawing.Size(44, 19);
+            this.selectionInfoLabel.TabIndex = 17;
+            this.selectionInfoLabel.Text = "Info: -";
+            // 
+            // outboundTitleLabel
+            // 
+            this.outboundTitleLabel.AutoSize = true;
+            this.outboundTitleLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.outboundTitleLabel.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.outboundTitleLabel.Location = new System.Drawing.Point(3, 0);
+            this.outboundTitleLabel.Name = "outboundTitleLabel";
+            this.outboundTitleLabel.Size = new System.Drawing.Size(133, 25);
+            this.outboundTitleLabel.TabIndex = 16;
+            this.outboundTitleLabel.Text = "Barang Keluar";
             // 
             // logKeluarLabel
             // 
@@ -398,15 +407,6 @@
             this.searchTextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
             // 
-            // selectionInfoLabel
-            // 
-            this.selectionInfoLabel.AutoSize = true;
-            this.selectionInfoLabel.Location = new System.Drawing.Point(242, 35);
-            this.selectionInfoLabel.Name = "selectionInfoLabel";
-            this.selectionInfoLabel.Size = new System.Drawing.Size(64, 25);
-            this.selectionInfoLabel.TabIndex = 17;
-            this.selectionInfoLabel.Text = "Info: -";
-            // 
             // TransaksiBarangForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -446,7 +446,7 @@
         private MetroFramework.Controls.MetroTextBox jumlahBarangTextBox;
         private MetroFramework.Controls.MetroTextBox merkTextBox;
         private MetroFramework.Controls.MetroTextBox namaBarangTextBox;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroLabel outboundTitleLabel;
         private MetroFramework.Controls.MetroLabel logKeluarLabel;
         private MetroFramework.Controls.MetroButton keluarkanButton;
         private MetroFramework.Controls.MetroTextBox jumlahKeluarTextBox;
