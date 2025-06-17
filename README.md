@@ -19,8 +19,8 @@
 | Nama                        | NIM         | Fitur yang Dikembangkan                  |
 |-----------------------------|-------------|------------------------------------------|
 | Muhammad Ageng Sasmito      | 1201220001  | Manajemen Barang Keluar & Multi-Bahasa   |
-|                             | 1201220000  |                                          |
-| Euangelion Michael Didimus  | 1201220029  | Manajemen Barang Masuk                   |
+| Enjina Disellyn             | 1201220014  | Sistem Login dan Manajemen Akun          |
+| Euangelion M Didimus        | 1201220029  | Manajemen Barang Masuk                   |
 |                             | 1201220000  |                                          |
 
 ---
