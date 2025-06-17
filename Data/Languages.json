@@ -2,6 +2,7 @@
     "ID": {
         "LogoutButton": "Keluar",
         "BackButton": "Kembali",
+        "TransactionButton": "Transaksi Barang",
         "TabItems": "Data Barang",
         "TabAccounts": "Manajemen Akun",
         "TabInbound": "Barang Masuk",
@@ -32,11 +33,15 @@
         "InputID": "ID Barang:",
         "InputJumlah": "Jumlah:",
         "SuccessMessage": "{0} {1} berhasil dikeluarkan! Stok berubah dari {2} menjadi {3}.",
-        "Error_General": "Terjadi kesalahan: "
+        "Error_General": "Terjadi kesalahan: ",
+        "LogPrefix": "Keterangan:",
+        "SelectedItemInfo": "Anda memilih: {0} {1} (Stok Tersisa: {2})",
+        "NoItemSelected": "Pilih barang dari tabel di atas."
     },
     "EN": {
         "LogoutButton": "Logout",
         "BackButton": "Back",
+        "TransactionButton": "Item Transactions",
         "TabItems": "Item Data",
         "TabAccounts": "Account Management",
         "TabInbound": "Inbound Goods",
@@ -67,6 +72,9 @@
         "InputID": "Item ID:",
         "InputJumlah": "Quantity:",
         "SuccessMessage": "{0} {1} has been issued! Stock changed from {2} to {3}.",
-        "Error_General": "An error occurred: "
+        "Error_General": "An error occurred: ",
+        "LogPrefix": "Status:",
+        "SelectedItemInfo": "You selected: {0} {1} (Stock Remaining: {2})",
+        "NoItemSelected": "Please select an item from the table above."
     }
 }
