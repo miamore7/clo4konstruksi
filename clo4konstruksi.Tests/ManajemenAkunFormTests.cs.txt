@@ -1,0 +1,74 @@
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using clo4konstruksi;
+using System;
+using System.Linq;
+
+namespace clo4konstruksi.Tests
+{
+    [TestClass]
+    public class ManajemenAkunFormTests
+    {
+        [TestMethod]
+        public void CreateAdmin_WithNewUsername_ShouldSucceed()
+        {
+            // Arrange
+            var loginService = LoginService.Instance;
+            string newUsername = $"admin_test_{Guid.NewGuid()}";
+            var initialUserCount = loginService.GetAllUsers().Count;
+
+            // Act
+            loginService.CreateAdmin(newUsername, "password123");
+            var newUser = loginService.GetAllUsers().FirstOrDefault(u => u.Username == newUsername);
+
+            // Assert
+            Assert.AreEqual(initialUserCount + 1, loginService.GetAllUsers().Count);
+            Assert.IsNotNull(newUser);
+
+            // Cleanup
+            loginService.DeleteUser(newUsername);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void CreateAdmin_WithExistingUsername_ShouldThrowException()
+        {
+            // Arrange
+            var loginService = LoginService.Instance;
+
+            // Act
+            loginService.CreateAdmin("admin", "password_baru"); // Username 'admin' sudah ada
+
+            // Assert - Lolos jika exception terjadi
+        }
+
+        [TestMethod]
+        public void DeleteUser_WhenUserExists_ShouldRemoveUser()
+        {
+            // Arrange
+            var loginService = LoginService.Instance;
+            string tempUser = "user_to_delete";
+            loginService.CreateAdmin(tempUser, "pass");
+            var initialUserCount = loginService.GetAllUsers().Count;
+
+            // Act
+            loginService.DeleteUser(tempUser);
+
+            // Assert
+            Assert.AreEqual(initialUserCount - 1, loginService.GetAllUsers().Count);
+            Assert.IsNull(loginService.GetAllUsers().FirstOrDefault(u => u.Username == tempUser));
+        }
+
+        [TestMethod]
+        public void GetAllUsers_ShouldNotReturnSuperAdmin()
+        {
+            // Arrange
+            var loginService = LoginService.Instance;
+
+            // Act
+            var users = loginService.GetAllUsers();
+
+            // Assert
+            Assert.IsFalse(users.Any(u => u.Role == "SuperAdmin"), "SuperAdmin seharusnya tidak ada di daftar GetAllUsers.");
+        }
+    }
+}
