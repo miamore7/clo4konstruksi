@@ -1,7 +1,7 @@
 # Tugas Besar CLO4 Konstruksi Perangkat Lunak
 
 **Aplikasi Laptop Inventory**  
-*Aplikasi Windows Forms untuk ...*
+*Aplikasi ini merupakan aplikasi manajemen inventaris berbasis bahasa pemrograman C# yang dirancang untuk digunakan secara internal oleh Mahasiswa RPL, terutama dalam rangka mengelola data barang (inventaris), login pengguna, serta pengaturan tampilan data. Sistem ini mengusung arsitektur berbasis file (JSON).*
 
 ---
 
