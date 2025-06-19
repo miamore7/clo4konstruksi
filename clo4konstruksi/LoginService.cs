@@ -103,7 +103,14 @@ namespace clo4konstruksi
         #region Metode Fungsionalitas Aplikasi
         public bool Login(string username, string password)
         {
-            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password)) return false;
+            // --- BAGIAN YANG DIPERBAIKI ---
+            // Sekarang melempar exception, bukan hanya return false
+            if (string.IsNullOrWhiteSpace(username))
+                throw new ArgumentException("Username tidak boleh kosong.");
+            if (string.IsNullOrWhiteSpace(password))
+                throw new ArgumentException("Password tidak boleh kosong.");
+            // --- AKHIR PERBAIKAN ---
+
             LoggedInUser = users.FirstOrDefault(u => u.Username == username && u.Password == password && u.IsActive);
             if (LoggedInUser != null)
             {
